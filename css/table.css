@@ -1,0 +1,23 @@
+/* TABLE */
+table {
+  border-collapse: collapse;
+  width: 100%;
+	text-align: left;
+	font-size: 10pt;
+  color: black;
+}
+table td, table th {
+  border: 5px solid #ddd;
+  padding: 8px;
+}
+table tr {
+	background-color: #fff;
+  text-transform: uppercase;
+}
+table tr:hover {background-color: #ddd;}
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: rgba(111, 24, 167, 0.6);
+  color: white;
+}

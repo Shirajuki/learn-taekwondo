@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Taekwondo belt guide by Shirajuki</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link href="../css/style.css" rel="stylesheet" type="text/css">
+  <link href="../css/table.css" rel="stylesheet" type="text/css">
+  <script preload src="../js/pensum.js"></script>
+  <script type="text/javascript">
+  const teoriArr = cup10.teori;
+  const sparkArr = cup10.spark;
+  const monsterArr = cup10.monster;
+  const oneStepArr = cup10.oneStep;
+  const selvforsvarArr = cup10.selvforsvar;
+  window.onload = () => {
+    let teori = document.getElementById('teori');
+    let spark = document.getElementById('spark');
+    let monster = document.getElementById('monster');
+    let oneStep = document.getElementById('oneStep');
+    createTable(teoriArr,teori);
+    createTable(sparkArr,spark);
+    createTable(monsterArr,monster);
+    createTable(oneStepArr,oneStep);
+    createTable(selvforsvarArr,selvforsvar);
+  }
+  function createTable(objArr,output) {
+    output.innerHTML = '';
+    let keys = Object.keys(objArr[0]);
+    for (let i = 0; i < objArr.length; i++) {
+      let values = Object.values(objArr[i]);
+      let tr = document.createElement('tr');
+      for (let j = 0; j < values.length; j++) {
+        let td = (i > 0) ? (document.createElement('td')) : (document.createElement('th'))
+        td.innerHTML = (i > 0) ? (values[j]) : (keys[j].toUpperCase().replace('AAR','')); // Overskrift som store bokstaver
+        tr.appendChild(td);
+      }
+      output.appendChild(tr);
+    }
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <p>Taekwondo WTF - Shirajuki</p>
+  </header>
+  <main id="main">
+    <div class="content">
+      <!-- TEORI -->
+      <div>
+        <h2>TEORI</h2>
+        <table id='teori'>
+        </table>
+      </div>
+      <button>ØV</button>
+      <!-- SPARK -->
+      <div>
+        <h2>SPARK</h2>
+        <table id='spark'>
+        </table>
+      </div>
+      <!-- MØNSTER -->
+      <div>
+        <h2>MØNSTER</h2>
+        <table id='monster'>
+        </table>
+      </div>
+      <!-- ONE STEP -->
+      <div>
+        <h2>ONE STEP</h2>
+        <p>Gibondongjak 1-3</p>
+        <table id='oneStep'>
+        </table>
+      </div>
+      <!-- SELVFORSVAR -->
+      <div>
+        <h2>SELVFORSVAR</h2>
+        <table id='selvforsvar'>
+        </table>
+      </div>
+      <!-- SPARRING -->
+      <h2>SPARRING</h2>
+    </div>
+  </main>
+  <br/>
+</body>
+
+</html>
