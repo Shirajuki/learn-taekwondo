@@ -20,9 +20,9 @@ const cup10 = {
   ],
   oneStep: [
     {'': '', angrep: '', forsvar: ''},
-    {'': '1.', angrep: 'Dwit kobi area makki.<br/>Ap kobi area jireugi.<br/>', forsvar: '<br/>Dwit kobi area makki.<br/>Ap kobi momtong jireugi.'},
-    {'': '2.', angrep: 'Dwit kobi area makki.<br/>Ap kobi momtong jireugi.<br/>', forsvar: '<br/>Dwit kobi geodoreo makki.<br/>Ap kobi momtong jireugi.'},
-    {'': '3.', angrep: 'Dwit kobi oesantul makki.<br/>Ap kobi mejumeok olgul naeryo chigi.<br/>', forsvar: '<br/>Dwit kobi olgul makki.<br/>Ap kobi olgul jireugi.'},
+    {'': '1.', angrep: '<p>Dwit kobi area makki.</p><p>Ap kobi area jireugi</p><p>-</p>', forsvar: '<p>-</p><p>Dwit kobi area makki.</p><p>Ap kobi momtong jireugi.</p>'},
+    {'': '2.', angrep: '<p>Dwit kobi area makki.<p/><p>Ap kobi momtong jireugi.</p><p>-</p>', forsvar: '<p>-</p>Dwit kobi geodoreo makki.</p><p>Ap kobi momtong jireugi.</p>'},
+    {'': '3.', angrep: '<p>Dwit kobi oesantul makki.<p/><p>Ap kobi mejumeok olgul naeryo chigi.</p><p>-</p>', forsvar: '<p>-</p>Dwit kobi olgul makki.<p>Ap kobi olgul jireugi.</p>'},
   ],
   selvforsvar: [
     {teknikk: '', video: ''},

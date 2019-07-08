@@ -12,7 +12,6 @@ table td, table th {
 }
 table tr {
 	background-color: #fff;
-  text-transform: uppercase;
 }
 table tr:hover {background-color: #ddd;}
 table th {

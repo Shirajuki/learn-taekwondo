@@ -6,7 +6,105 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/table.css" rel="stylesheet" type="text/css">
+  <script preload src="js/pensum.js"></script>
   <script type="text/javascript">
+  let content, buttons;
+  let meny;
+  window.onload = () => {
+    content = document.getElementById('content');
+    buttons = document.querySelectorAll('a button');
+    for (let button of buttons) {
+      button.onclick = function() {
+        loadPensum(this.id);
+      }
+    }
+    meny = document.getElementsByClassName('meny');
+    for (let men of meny) {
+      men.onclick = function() {
+        menyChooser(this.value)
+      }
+    }
+  }
+  function menyChooser(value) {
+    console.log(value);
+    if (value == 1) {
+      content.innerHTML = `
+      <h2>Pensum</h2>
+      <div class="navBox">
+        <a><button id="cup10">10. cup [White]</button></a>
+        <a><button id="cup8">8. cup [Gul]</button></a>
+        <a><button id="cup7">7. cup [Gul #]</button></a>
+        <a><button id="cup6">6. cup [Grønn]</button></a>
+        <a><button id="cup5">5. cup [Grønn #]</button></a>
+        <a><button id="cup4">4. cup [Blå]</button></a>
+        <a><button id="cup3">3. cup [Blå #]</button></a>
+        <a><button id="cup2">2. cup [Rød]</button></a>
+        <a><button id="cup1">1. cup [Rød #]</button></a>
+        <br>
+      </div>`
+    }
+  }
+  function loadPensum(id) {
+    content.innerHTML = `
+    <div>
+      <h2>TEORI</h2>
+      <table id='teori'>
+      </table>
+    </div>
+    <button>ØV</button>
+    <div>
+      <h2>SPARK</h2>
+      <table id='spark'>
+      </table>
+    </div>
+    <div>
+      <h2>MØNSTER</h2>
+      <table id='monster'>
+      </table>
+    </div>
+    <div>
+      <h2>ONE STEP</h2>
+      <p>Ilpoteranian something</p>
+      <table id='oneStep'>
+      </table>
+    </div>
+    <div>
+      <h2>SELVFORSVAR</h2>
+      <table id='selvforsvar'>
+      </table>
+    </div>
+    <h2>SPARRING</h2>`;
+    setTimeout(_=> {
+      let cup = eval(id);
+      let teoriArr = cup.teori;
+      let sparkArr = cup.spark;
+      let monsterArr = cup.monster;
+      let oneStepArr = cup.oneStep;
+      let selvforsvarArr = cup.selvforsvar;
+      console.log(eval(id));
+
+      createTable(teoriArr,document.getElementById('teori'));
+      createTable(sparkArr,document.getElementById('spark'));
+      createTable(monsterArr,document.getElementById('monster'));
+      createTable(oneStepArr,document.getElementById('oneStep'));
+      createTable(selvforsvarArr,document.getElementById('selvforsvar'));
+    },0)
+  }
+  function createTable(objArr,output) {
+    output.innerHTML = '';
+    let keys = Object.keys(objArr[0]);
+    for (let i = 0; i < objArr.length; i++) {
+      let values = Object.values(objArr[i]);
+      let tr = document.createElement('tr');
+      for (let j = 0; j < values.length; j++) {
+        let td = (i > 0) ? (document.createElement('td')) : (document.createElement('th'))
+        td.innerHTML = (i > 0) ? (values[j]) : (keys[j].toUpperCase().replace('AAR','')); // Overskrift som store bokstaver
+        tr.appendChild(td);
+      }
+      output.appendChild(tr);
+    }
+  }
   </script>
 </head>
 <body>
@@ -14,23 +112,27 @@
     <p>Taekwondo WTF - Shirajuki</p>
   </header>
   <main id="main">
-    <div class="content">
+    <div id="content">
       <h2>Pensum</h2>
       <div class="navBox">
-        <a href='belt/cup10.html'><button>10. cup [White]</button></a>
-        <a href='belt/cup8.html'><button>8. cup [Gul]</button></a>
-        <a href='belt/cup7.html'><button>7. cup [Gul #]</button></a>
-        <a href='belt/cup6.html'><button>6. cup [Grønn]</button></a>
-        <a href='belt/cup5.html'><button>5. cup [Grønn #]</button></a>
-        <a href='#'><button>4. cup [Blå]</button></a>
-        <a href='#'><button>3. cup [Blå #]</button></a>
-        <a href='#'><button>2. cup [Rød]</button></a>
-        <a href='#'><button>1. cup [Rød #]</button></a>
+        <a><button id="cup10">10. cup [White]</button></a>
+        <a><button id="cup8">8. cup [Gul]</button></a>
+        <a><button id="cup7">7. cup [Gul #]</button></a>
+        <a><button id="cup6">6. cup [Grønn]</button></a>
+        <a><button id="cup5">5. cup [Grønn #]</button></a>
+        <a><button id="cup4">4. cup [Blå]</button></a>
+        <a><button id="cup3">3. cup [Blå #]</button></a>
+        <a><button id="cup2">2. cup [Rød]</button></a>
+        <a><button id="cup1">1. cup [Rød #]</button></a>
         <br>
       </div>
     </div>
   </main>
-  <br/>
+  <footer>
+    <button class="meny" value="1"><i>Hjem</i></button>
+    <button class="meny" value="2"><i>Mønster</i></button>
+    <button class="meny" value="3"><i>Kicks</i></button>
+  </footer>
 </body>
 
 </html>
