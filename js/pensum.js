@@ -9,14 +9,14 @@ const cup10 = {
     {romanization: 'Dwirodora', norsk: 'Snu'},
   ],
   spark: [
-    {romanization: '', norsk: '', video: ''},
-    {romanization: 'Ap chagi', norsk: 'Frontspark med vrist', video: 'yo'},
-    {romanization: 'Dollyo chagi',norsk: 'Rundspark', video: 'yo'},
-    {romanization: 'Yop chagi',norsk: 'Sidespark', video: 'yo'},
+    {romanization: '', norsk: ''},
+    {romanization: 'Ap chagi', norsk: 'Frontspark med vrist'},
+    {romanization: 'Dollyo chagi',norsk: 'Rundspark'},
+    {romanization: 'Yop chagi',norsk: 'Sidespark'},
   ],
   monster: [
-    {romanization: '', video: ''},
-    {romanization: 'Taegeuk Il-jang', video: 'yo'},
+    {romanization: ''},
+    {romanization: 'Taegeuk Il-jang'},
   ],
   oneStep: [
     {'': '', angrep: '', forsvar: ''},
@@ -25,8 +25,8 @@ const cup10 = {
     {'': '3.', angrep: '<p>Dwit kobi oesantul makki.<p/><p>Ap kobi mejumeok olgul naeryo chigi.</p><p>-</p>', forsvar: '<p>-</p>Dwit kobi olgul makki.<p>Ap kobi olgul jireugi.</p>'},
   ],
   selvforsvar: [
-    {teknikk: '', video: ''},
-    {teknikk: 'Fallteknikker og rull', video: 'yo'},
+    {teknikk: ''},
+    {teknikk: 'Fallteknikker og rull'},
   ],
 };
 const cup8 = {
@@ -43,15 +43,15 @@ const cup8 = {
     {romanization: 'Makki', norsk: 'Blokk'},
   ],
   spark: [
-    {romanization: '', norsk: '', video: ''},
-    {romanization: 'Apchok ap chagi', norsk: 'Frontspark med tåball', video: 'yo'},
-    {romanization: 'An chagi',norsk: 'Innadgående spark', video: 'yo'},
-    {romanization: 'Bakkat chagi',norsk: 'Utadgående spark', video: 'yo'},
+    {romanization: '', norsk: ''},
+    {romanization: 'Apchok ap chagi', norsk: 'Frontspark med tåball'},
+    {romanization: 'An chagi',norsk: 'Innadgående spark'},
+    {romanization: 'Bakkat chagi',norsk: 'Utadgående spark'},
   ],
   monster: [
-    {romanization: '', video: ''},
-    {romanization: 'Taegeuk I-jang', video: 'yo'},
-    {romanization: 'Taegeuk Il-jang', video: 'yo'},
+    {romanization: ''},
+    {romanization: 'Taegeuk I-jang'},
+    {romanization: 'Taegeuk Il-jang'},
   ],
   oneStep: [
     {'': '', angrep: '', forsvar: ''},
@@ -60,8 +60,8 @@ const cup8 = {
     {'': '3.', angrep: 'Dwit kobi oesantul makki.<br/>Ap kobi mejumeok olgul naeryo chigi.<br/>', forsvar: '<br/>Dwit kobi olgul makki.<br/>Ap kobi olgul jireugi.'},
   ],
   selvforsvar: [
-    {teknikk: '', video: ''},
-    {teknikk: 'Forsvar mot håndleddsgrep', video: 'yo'},
+    {teknikk: ''},
+    {teknikk: 'Forsvar mot håndleddsgrep'},
   ],
 };
 const cup7 = {
@@ -72,14 +72,14 @@ const cup7 = {
     {romanization: 'Area', norsk: 'Fra hoftebeinet og ned'},
   ],
   spark: [
-    {romanization: '', norsk: '', video: ''},
-    {romanization: 'Mit chagi', norsk: 'Skrått spark (ca. 45°)', video: 'yo'},
-    {romanization: 'Mira chagi', norsk: 'Dyttespark', video: 'yo'},
+    {romanization: '', norsk: ''},
+    {romanization: 'Mit chagi', norsk: 'Skrått spark (ca. 45°)'},
+    {romanization: 'Mira chagi', norsk: 'Dyttespark'},
   ],
   monster: [
-    {romanization: '', video: ''},
-    {romanization: 'Taegeuk Sam-jang', video: 'yo'},
-    {romanization: 'Taegeuk I-jang', video: 'yo'},
+    {romanization: ''},
+    {romanization: 'Taegeuk Sam-jang'},
+    {romanization: 'Taegeuk I-jang'},
   ],
   oneStep: [
     {'': '', angrep: '', forsvar: ''},
@@ -91,8 +91,8 @@ const cup7 = {
     {'': '6', angrep: 'Dwit kobi area makki.<br/>Ap kobi momtong jireugi.</br><br/>', forsvar: '<br/>Dwit kobi sonnal geodoreo makki.<br/>Yop chagi (høyre fot).<br/>Dwit kobi sonnal bakkat chigi.'},
   ],
   selvforsvar: [
-    {teknikk: '', video: ''},
-    {teknikk: 'Forsvar mot kveletak', video: 'yo'},
+    {teknikk: ''},
+    {teknikk: 'Forsvar mot kveletak'},
   ],
 };
 const cup6 = {
@@ -108,14 +108,14 @@ const cup6 = {
     {romanization: 'Kukkiwon', norsk: 'WTFs hovedkvarter i Seoul, Sør-Korea'},
   ],
   spark: [
-    {romanization: '', norsk: '', video: ''},
-    {romanization: 'Bandae yop chagi', norsk: 'Baklengs sidespark (med rotasjon)', video: 'yo'},
-    {romanization: 'Naeryo chagi', norsk: 'Frontspark med kraft nedover', video: 'yo'},
+    {romanization: '', norsk: ''},
+    {romanization: 'Bandae yop chagi', norsk: 'Baklengs sidespark (med rotasjon)'},
+    {romanization: 'Naeryo chagi', norsk: 'Frontspark med kraft nedover'},
   ],
   monster: [
-    {romanization: '', video: ''},
-    {romanization: 'Taegeuk Sah-jang', video: 'yo'},
-    {romanization: 'Taegeuk Sam-jang', video: 'yo'},
+    {romanization: ''},
+    {romanization: 'Taegeuk Sah-jang'},
+    {romanization: 'Taegeuk Sam-jang'},
   ],
   oneStep: [
     {'': '', angrep: '', forsvar: ''},
@@ -127,8 +127,8 @@ const cup6 = {
     {'': '6', angrep: 'Dwit kobi area makki.<br/>Ap kobi momtong jireugi.</br><br/>', forsvar: '<br/>Dwit kobi sonnal geodoreo makki.<br/>Yop chagi (høyre fot).<br/>Dwit kobi sonnal bakkat chigi.'},
   ],
   selvforsvar: [
-    {teknikk: '', video: ''},
-    {teknikk: 'Forsvar mot holde fast i genser, jakke, kjole, osv.', video: 'yo'},
+    {teknikk: ''},
+    {teknikk: 'Forsvar mot holde fast i genser, jakke, kjole, osv.'},
   ],
 };
 const cup5 = {
@@ -147,21 +147,21 @@ const cup5 = {
     {romanization: 'Yeol', norsk: '10'},
   ],
   spark: [
-    {romanization: '', norsk: '', video: ''},
-    {romanization: 'Dwit chagi', norsk: '“Hestespark”, hælen mot taket', video: 'yo'},
-    {romanization: 'Apchok dolyo chagi', norsk: 'Rundspark med tåball', video: 'yo'},
+    {romanization: '', norsk: ''},
+    {romanization: 'Dwit chagi', norsk: '“Hestespark”, hælen mot taket'},
+    {romanization: 'Apchok dolyo chagi', norsk: 'Rundspark med tåball'},
   ],
   monster: [
-    {romanization: '', video: ''},
-    {romanization: 'Taegeuk Oh-jang', video: 'yo'},
-    {romanization: 'Taegeuk Sah-jang', video: 'yo'},
-    {romanization: 'Taegeuk Sam-jang', video: 'yo'},
+    {romanization: ''},
+    {romanization: 'Taegeuk Oh-jang'},
+    {romanization: 'Taegeuk Sah-jang'},
+    {romanization: 'Taegeuk Sam-jang'},
   ],
   oneStep: [
     {'': '', angrep: '', forsvar: ''},
   ],
   selvforsvar: [
     {teknikk: '', video: ''},
-    {teknikk: 'Forsvar mot hookslag', video: 'yo'},
+    {teknikk: 'Forsvar mot hookslag'},
   ],
 };

@@ -9,25 +9,27 @@
   <link href="css/table.css" rel="stylesheet" type="text/css">
   <script preload src="js/pensum.js"></script>
   <script type="text/javascript">
-  let content, buttons;
+  let contents, content, buttons;
   let meny;
   window.onload = () => {
-    content = document.getElementById('content');
-    buttons = document.querySelectorAll('a button');
-    for (let button of buttons) {
-      button.onclick = function() {
-        loadPensum(this.id);
-      }
-    }
+    contents = document.getElementsByClassName('contents');
+    content = contents[0];
+    loadButtons();
     meny = document.getElementsByClassName('meny');
     for (let men of meny) {
       men.onclick = function() {
         menyChooser(this.value)
       }
     }
+    menyChooser(1);
   }
   function menyChooser(value) {
     console.log(value);
+    for (conten of contents) {
+      conten.style.display = 'none';
+    }
+    contents[value-1].style.display = 'block';
+
     if (value == 1) {
       content.innerHTML = `
       <h2>Pensum</h2>
@@ -41,8 +43,24 @@
         <a><button id="cup3">3. cup [Blå #]</button></a>
         <a><button id="cup2">2. cup [Rød]</button></a>
         <a><button id="cup1">1. cup [Rød #]</button></a>
-        <br>
       </div>`
+      loadButtons();
+    } else if (value == 2) {
+      content.innerHTML = `
+      <h2>2</h2>
+      `
+    } else if (value == 3) {
+      content.innerHTML = `
+      <h2>3</h2>
+      `
+    }
+  }
+  function loadButtons() {
+    buttons = document.querySelectorAll('a button');
+    for (let button of buttons) {
+      button.onclick = function() {
+        loadPensum(this.id);
+      }
     }
   }
   function loadPensum(id) {
@@ -112,7 +130,7 @@
     <p>Taekwondo WTF - Shirajuki</p>
   </header>
   <main id="main">
-    <div id="content">
+    <div class="contents" name="1">
       <h2>Pensum</h2>
       <div class="navBox">
         <a><button id="cup10">10. cup [White]</button></a>
@@ -124,8 +142,13 @@
         <a><button id="cup3">3. cup [Blå #]</button></a>
         <a><button id="cup2">2. cup [Rød]</button></a>
         <a><button id="cup1">1. cup [Rød #]</button></a>
-        <br>
       </div>
+    </div>
+    <div class="contents" name="2">
+      <h2>2</h2>
+    </div>
+    <div class="contents" name="3">
+      <h2>3</h2>
     </div>
   </main>
   <footer>
