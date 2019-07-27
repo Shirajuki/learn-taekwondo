@@ -1,0 +1,231 @@
+:root {
+  /* --theme-color1: #f7a7b9; */
+  --theme-color1: #5680e9;
+  --theme-color2: #84ceeb;
+  --theme-color3: #5ab9ea;
+  --theme-color4: #c1c8e4;
+  --theme-color5: #8860d0;
+  --text-color1: black;
+  --text-color2: #888;
+}
+* {
+  /* disable text selection */
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+@font-face {
+  font-family: 'notoEmoji';
+  src: url('../fonts/notoemoji.ttf') format('truetype'),
+   url('../fonts/notoemoji.woff') format('woff'),
+   url('../fonts/notoemoji.woff2') format('woff2');
+}
+html {
+  font-family: Arial,'Hiragino Sans GB',STXihei,'Microsoft YaHei',sans-serif;
+  text-align: center;
+  background-color: var(--theme-color1);
+  color: white;
+  font-size: 12pt;
+  zoom: 1.1;
+}
+header {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+header button {
+  border-radius: 5px;
+}
+body {
+  overflow: hidden;
+}
+.contents #listWords {
+  overflow: scroll;
+  height: 100vh;
+}
+.contents #listWords div {
+  font-size: 1.6rem;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 30% 30% 40%;
+  justify-content: space-around;
+  margin: 3px 0;
+}
+.contents .cardsMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+  padding: 5px;
+}
+.contents {
+  display: none;
+  animation: fadein 1s linear;
+}
+.divButtons {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+a, button {
+  cursor: pointer;
+}
+i {
+  font-family: 'notoEmoji', Fallback, sans-serif;
+  font-style: normal;
+}
+#echange {
+  font-weight: bold;
+  margin: 1.4rem 0 2rem 0;
+}
+footer {
+  position: absolute;
+  display: flex;
+  margin: 0;
+  bottom: 0;
+  left: 0;
+  justify-content: space-between;
+  background-color: var(--theme-color1);
+  border-top: 10px solid var(--theme-color1);
+  width: 100%;
+}
+footer button {
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+  background-color: var(--theme-color1);
+  border-radius: 0;
+  padding: 6px 0;
+  width: 100%;
+}
+footer .active {
+  transform: translate(0,-5px);
+}
+footer .active:after {
+  content: '__';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+button {
+  position: relative;
+  background-color: white;
+  border: none;
+  padding: 10px 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 90%;
+  margin: 5px 0;
+  color: var(--theme-color1)
+}
+button.btn {
+  box-shadow: 0 7px rgba(255,220,220,0.9);
+}
+button.btn:active {
+  box-shadow: 0 5px rgba(255,220,220,0.9);
+  transform: translateY(3px);
+}
+#mainmenu {
+  overflow: scroll;
+  height: 100vh;
+}
+.popup {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  transition: .2s;
+}
+@keyframes ripple {
+  0% { transform: scale(0, 0); opacity: 1; }
+  10% { transform: scale(10, 10); opacity: 1; }
+  100% { transform: scale(100, 100); opacity: 0; }
+}
+/* Styling Checkbox */
+input[type=checkbox] + label {
+  display: block;
+  cursor: pointer;
+}
+input[type=checkbox] {
+  display: none;
+}
+input[type=checkbox] + label:before {
+  content: " ";
+  border: 0.1rem solid #000;
+  border-radius: 0.4rem;
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  padding: 0.1rem 0.2rem 0.2rem 0.1rem;
+  margin-right: 0.2rem;
+  color: transparent;
+  transition: .2s;
+}
+input[type=checkbox] + label:active:before {
+  transform: scale(0);
+}
+input[type=checkbox]:checked + label:before {
+  background-color: rgba(0,0,0,0.7);
+  border-color: 0.1rem solid var(--theme-color1);
+  color: #fff;
+}
+@media only screen and (max-height: 680px) {
+  html { zoom: 0.85 }
+}
+@media only screen and (max-height: 630px) {
+  html { zoom: 0.8 }
+}
+@media only screen and (max-height: 580px) {
+  html { zoom: 0.75 }
+}
+@media only screen and (max-height: 510px) {
+  html { zoom: 0.65 }
+}
+@media only screen and (max-height: 460px) {
+  html { zoom: 0.55 }
+}
+@media only screen and (max-height: 380px) {
+  html { zoom: 0.45 }
+}
+@media only screen and (max-height: 320px) {
+  html { zoom: 0.4 }
+}
+@media only screen and (max-height: 300px) {
+  html { zoom: 0.3 }
+}
+.animate-1 {
+  animation: fadein 1s linear;
+}
+.animate-2 {
+  animation: fadeleft .7s linear;
+}
+.animate-3 {
+  animation: fade 1s linear;
+}
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes fadein {
+    from { transform: translate(0,20px); opacity: 0; }
+    to { transform: translate(0,0); opacity: 1; }
+}
+@keyframes fadeleft {
+    from { transform: translate(50px,0); opacity: 0; }
+    to { transform: translate(0,0); opacity: 1; }
+}
