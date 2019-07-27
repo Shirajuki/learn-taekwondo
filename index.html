@@ -1,161 +1,227 @@
 <!doctype html>
 <html>
-
 <head>
-  <title>Taekwondo belt guide by Shirajuki</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link href="css/style.css" rel="stylesheet" type="text/css">
-  <link href="css/table.css" rel="stylesheet" type="text/css">
-  <script preload src="js/pensum.js"></script>
-  <script type="text/javascript">
-  let contents, content, buttons;
-  let meny;
-  window.onload = () => {
-    contents = document.getElementsByClassName('contents');
-    content = contents[0];
-    loadButtons();
-    meny = document.getElementsByClassName('meny');
-    for (let men of meny) {
-      men.onclick = function() {
-        menyChooser(this.value)
-      }
-    }
-    menyChooser(1);
-  }
-  function menyChooser(value) {
-    console.log(value);
-    for (conten of contents) {
-      conten.style.display = 'none';
-    }
-    contents[value-1].style.display = 'block';
+	<title>Jonny</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<link href="css/index.css" rel="stylesheet" type="text/css">
+	<link href="css/preloader.css" rel="stylesheet" type="text/css">
+	<link href="css/table.css" rel="stylesheet" type="text/css">
+	<script preload src="js/pensum.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<script type="text/javascript">
+	// https://emojipedia.org/symbols/
+		setTimeout(showPage, 1400);
+	  function showPage() {
+			document.getElementById("loader").style.visibility = "hidden";
+			document.getElementById("loader").style.opacity = 0;
+	    setTimeout(() => {
+	      document.getElementById("loader").style.display = "none";
+	    },500)
+	  }
+		let contents, menyButtons;
+		let content, buttons;
+		// Onload DOM and Event setups. Also calls some functions to initialize the app.
+		window.onload = () => {
+		// DOM - footer
+			contents = document.getElementsByClassName('contents');
+			menyButtons = document.getElementsByClassName('menyButtons');
+			content = document.getElementById('mainmenu');
+			for (let c of menyButtons) {
+				c.onclick = function() {menyChange(this.name,contents,menyButtons)};
+			}
+			loadButtons();
+			menyChange(0,contents,menyButtons);
+		}
+		function menyChange(value,contents,menyButtons) {
+			for (let i = 0; i < contents.length; i++) {
+				menyButtons[i].classList.remove('active');
+				contents[i].style.display = 'none';
+			}
+			menyButtons[value].classList.add('active');
+			contents[value].style.display = 'block';
 
-    if (value == 1) {
-      content.innerHTML = `
-      <h2>Pensum</h2>
-      <div class="navBox">
-        <a><button id="cup10">10. cup [White]</button></a>
-        <a><button id="cup8">8. cup [Gul]</button></a>
-        <a><button id="cup7">7. cup [Gul #]</button></a>
-        <a><button id="cup6">6. cup [Grønn]</button></a>
-        <a><button id="cup5">5. cup [Grønn #]</button></a>
-        <a><button id="cup4">4. cup [Blå]</button></a>
-        <a><button id="cup3">3. cup [Blå #]</button></a>
-        <a><button id="cup2">2. cup [Rød]</button></a>
-        <a><button id="cup1">1. cup [Rød #]</button></a>
-      </div>`
-      loadButtons();
-    } else if (value == 2) {
-      content.innerHTML = `
-      <h2>2</h2>
-      `
-    } else if (value == 3) {
-      content.innerHTML = `
-      <h2>3</h2>
-      `
-    }
-  }
-  function loadButtons() {
-    buttons = document.querySelectorAll('a button');
-    for (let button of buttons) {
-      button.onclick = function() {
-        loadPensum(this.id);
-      }
-    }
-  }
-  function loadPensum(id) {
-    content.innerHTML = `
-    <div>
-      <h2>TEORI</h2>
-      <table id='teori'>
-      </table>
-    </div>
-    <button>ØV</button>
-    <div>
-      <h2>SPARK</h2>
-      <table id='spark'>
-      </table>
-    </div>
-    <div>
-      <h2>MØNSTER</h2>
-      <table id='monster'>
-      </table>
-    </div>
-    <div>
-      <h2>ONE STEP</h2>
-      <p>Ilpoteranian something</p>
-      <table id='oneStep'>
-      </table>
-    </div>
-    <div>
-      <h2>SELVFORSVAR</h2>
-      <table id='selvforsvar'>
-      </table>
-    </div>
-    <h2>SPARRING</h2>`;
-    setTimeout(_=> {
-      let cup = eval(id);
-      let teoriArr = cup.teori;
-      let sparkArr = cup.spark;
-      let monsterArr = cup.monster;
-      let oneStepArr = cup.oneStep;
-      let selvforsvarArr = cup.selvforsvar;
-      console.log(eval(id));
+			if (value == 0) {
+	      content.innerHTML = `
+	      <h2>Pensum</h2>
+	      <div class="navBox">
+	        <a><button id="cup10">10. cup [Hvit]</button></a>
+	        <a><button id="cup8">8. cup [Gul]</button></a>
+	        <a><button id="cup7">7. cup [Gul #stripe]</button></a>
+	        <a><button id="cup6">6. cup [Grønn]</button></a>
+	        <a><button id="cup5">5. cup [Grønn #stripe]</button></a>
+	        <a><button id="cup4">4. cup [Blå]</button></a>
+	        <a><button id="cup3">3. cup [Blå #stripe]</button></a>
+	        <a><button id="cup2">2. cup [Rød]</button></a>
+	        <a><button id="cup1">1. cup [Rød #stripe]</button></a>
+	      </div>`
+	      loadButtons();
+	    } else if (value == 1) {
+	      content.innerHTML = `
+				<h2>Mønster<h2>
+				<a href="01. Taeguk_Il_Jang.mp4"><button>Taeguk Il-jang</button></a>
+				<a href="02. Taeguk_I_Jang.mp4"><button>Taeguk I-jang</button></a>
+				<a href="03. Taeguk_Sam_Jang.mp4"><button>Taeguk Sam-jang</button></a>
+				<a href="04. Taeguk_Sa_Jang.mp4"><button>Taeguk Sa-jang</button></a>
+				<a href="05. Taeguk_Oh_Jang.mp4"><button>Taeguk Oh-jang</button></a>
+				<a href="06. Taeguk_Yuk_Jang.mp4"><button>Taeguk Yuk-jang</button></a>
+				<a href="07. Taeguk_Chil_Jang.mp4"><button>Taeguk Chil-jang</button></a>
+				<a href="08. Taeguk_Pal_Jang.mp4"><button>Taeguk Pal-jang</button></a>
+	      `
+	    } else if (value == 2) {
+	      content.innerHTML = `
+	      <h2>3</h2>
+	      `
+	    }
+		}
+		function loadButtons() {
+	    buttons = document.querySelectorAll('a button');
+	    for (let button of buttons) {
+	      button.onclick = function() {
+	        loadPensum(this.id);
+	      }
+	    }
+	  }
+		function loadPensum(id) {
+	    content.innerHTML = `
+	    <div>
+	      <h2>TEORI</h2>
+	      <table id='teori'>
+	      </table>
+	    </div>
+	    <button>ØV</button>
+	    <div>
+	      <h2>SPARK</h2>
+	      <table id='spark'>
+	      </table>
+	    </div>
+	    <div>
+	      <h2>MØNSTER</h2>
+	      <table id='monster'>
+	      </table>
+	    </div>
+	    <div>
+	      <h2>ONE STEP</h2>
+	      <p>Ilpoteranian something</p>
+	      <table id='oneStep'>
+	      </table>
+	    </div>
+	    <div>
+	      <h2>SELVFORSVAR</h2>
+	      <table id='selvforsvar'>
+	      </table>
+	    </div>
+	    <h2>SPARRING</h2>`;
+	    setTimeout(_=> {
+	      let cup = eval(id);
+	      let teoriArr = cup.teori;
+	      let sparkArr = cup.spark;
+	      let monsterArr = cup.monster;
+	      let oneStepArr = cup.oneStep;
+	      let selvforsvarArr = cup.selvforsvar;
+	      console.log(eval(id));
 
-      createTable(teoriArr,document.getElementById('teori'));
-      createTable(sparkArr,document.getElementById('spark'));
-      createTable(monsterArr,document.getElementById('monster'));
-      createTable(oneStepArr,document.getElementById('oneStep'));
-      createTable(selvforsvarArr,document.getElementById('selvforsvar'));
-    },0)
-  }
-  function createTable(objArr,output) {
-    output.innerHTML = '';
-    let keys = Object.keys(objArr[0]);
-    for (let i = 0; i < objArr.length; i++) {
-      let values = Object.values(objArr[i]);
-      let tr = document.createElement('tr');
-      for (let j = 0; j < values.length; j++) {
-        let td = (i > 0) ? (document.createElement('td')) : (document.createElement('th'))
-        td.innerHTML = (i > 0) ? (values[j]) : (keys[j].toUpperCase().replace('AAR','')); // Overskrift som store bokstaver
-        tr.appendChild(td);
-      }
-      output.appendChild(tr);
-    }
-  }
-  </script>
+	      createTable(teoriArr,document.getElementById('teori'));
+	      createTable(sparkArr,document.getElementById('spark'));
+	      createTable(monsterArr,document.getElementById('monster'));
+	      createTable(oneStepArr,document.getElementById('oneStep'));
+	      createTable(selvforsvarArr,document.getElementById('selvforsvar'));
+	    },0)
+	  }
+	  function createTable(objArr,output) {
+	    output.innerHTML = '';
+	    let keys = Object.keys(objArr[0]);
+	    for (let i = 0; i < objArr.length; i++) {
+	      let values = Object.values(objArr[i]);
+	      let tr = document.createElement('tr');
+	      for (let j = 0; j < values.length; j++) {
+	        let td = (i > 0) ? (document.createElement('td')) : (document.createElement('th'))
+	        td.innerHTML = (i > 0) ? (values[j]) : (keys[j].toUpperCase().replace('AAR','')); // Overskrift som store bokstaver
+	        tr.appendChild(td);
+	      }
+	      output.appendChild(tr);
+	    }
+	  }
+		// Custom function for toggling CSS animations after a given time.
+		function toggleAnimate(dom,animateName,time=1400) {
+			dom.classList.toggle(animateName);
+			setTimeout(() =>{
+				dom.classList.toggle(animateName);
+			},time);
+		}
+		// Custom function to open/close popups.
+		function openClose(bool,dom,animateType=1) {
+		  if (bool) {
+		    dom.style.visibility = 'visible';
+		    dom.style.opacity = '1';
+
+				if (animateType !== 0) {
+					for (let i = 0; i < dom.childElementCount; i++) {
+						toggleAnimate(dom.children[i],`animate-${animateType}`);
+					}
+				}
+		  } else {
+		    dom.style.visibility = 'hidden';
+		    dom.style.opacity = '0';
+		  }
+		}
+	</script>
 </head>
 <body>
-  <header>
-    <p>Taekwondo WTF - Shirajuki</p>
-  </header>
-  <main id="main">
-    <div class="contents" name="1">
-      <h2>Pensum</h2>
-      <div class="navBox">
-        <a><button id="cup10">10. cup [White]</button></a>
-        <a><button id="cup8">8. cup [Gul]</button></a>
-        <a><button id="cup7">7. cup [Gul #]</button></a>
-        <a><button id="cup6">6. cup [Grønn]</button></a>
-        <a><button id="cup5">5. cup [Grønn #]</button></a>
-        <a><button id="cup4">4. cup [Blå]</button></a>
-        <a><button id="cup3">3. cup [Blå #]</button></a>
-        <a><button id="cup2">2. cup [Rød]</button></a>
-        <a><button id="cup1">1. cup [Rød #]</button></a>
-      </div>
-    </div>
-    <div class="contents" name="2">
-      <h2>2</h2>
-    </div>
-    <div class="contents" name="3">
-      <h2>3</h2>
-    </div>
-  </main>
-  <footer>
-    <button class="meny" value="1"><i>Hjem</i></button>
-    <button class="meny" value="2"><i>Mønster</i></button>
-    <button class="meny" value="3"><i>Kicks</i></button>
-  </footer>
-</body>
+	<div id="loader">
+		<div class="spinner" preload></div>
+	</div>
 
+	<!-- Header -->
+	<header>
+		<p>Taekwondo WT - Shirajuki</p>
+	</header>
+	<!-- Main -->
+	<main>
+		<!-- PAGE 1 -->
+		<div class='contents' id="page1">
+			<div id="mainmenu">
+				<h2>Pensum</h2>
+				<div class="navBox">
+					<a><button id="cup10">10. cup [Hvit]</button></a>
+					<a><button id="cup8">8. cup [Gul]</button></a>
+					<a><button id="cup7">7. cup [Gul #]</button></a>
+					<a><button id="cup6">6. cup [Grønn]</button></a>
+					<a><button id="cup5">5. cup [Grønn #]</button></a>
+					<a><button id="cup4">4. cup [Blå]</button></a>
+					<a><button id="cup3">3. cup [Blå #]</button></a>
+					<a><button id="cup2">2. cup [Rød]</button></a>
+					<a><button id="cup1">1. cup [Rød #]</button></a>
+				</div>
+			</div>
+		</div>
+		<!-- PAGE 2 -->
+		<div class='contents' id="page2">
+			<div class="">
+				<h2>Mønster<h2>
+					<a href="01. Taeguk_Il_Jang.mp4"><button>Taeguk Il-jang</button></a>
+					<a href="02. Taeguk_I_Jang.mp4"><button>Taeguk I-jang</button></a>
+					<a href="03. Taeguk_Sam_Jang.mp4"><button>Taeguk Sam-jang</button></a>
+					<a href="04. Taeguk_Sa_Jang.mp4"><button>Taeguk Sa-jang</button></a>
+					<a href="05. Taeguk_Oh_Jang.mp4"><button>Taeguk Oh-jang</button></a>
+					<a href="06. Taeguk_Yuk_Jang.mp4"><button>Taeguk Yuk-jang</button></a>
+					<a href="07. Taeguk_Chil_Jang.mp4"><button>Taeguk Chil-jang</button></a>
+					<a href="08. Taeguk_Pal_Jang.mp4"><button>Taeguk Pal-jang</button></a>
+			</div>
+		</div>
+
+		<!-- PAGE 3 -->
+		<div class='contents'>
+			<div class="">
+				<h2>3</h2>
+			</div>
+		</div>
+	</main>
+	<!-- Footer -->
+	<footer>
+		<button name="0" class='menyButtons' class='active'><i>🏠</i></button>
+		<button name="1" class='menyButtons'><i>🥋</i></button>
+		<button name="2" class='menyButtons'><i>👟</i></button>
+	</footer>
+</body>
 </html>

@@ -157,11 +157,118 @@ const cup5 = {
     {romanization: 'Taegeuk Sah-jang'},
     {romanization: 'Taegeuk Sam-jang'},
   ],
-  oneStep: [
-    {'': '', angrep: '', forsvar: ''},
+  oneStep: [ //Ilpoterian 1-3
+    {'': '', angrep: ' ap kobi area makki (tilbake), ap kobi momtong jireugi', forsvar: ''},
   ],
   selvforsvar: [
-    {teknikk: '', video: ''},
+    {teknikk: ''},
     {teknikk: 'Forsvar mot hookslag'},
+  ],
+};
+const cup4 = {
+  teori: [
+    {romanization: '', norsk: ''},
+    {romanization: 'Pal', norsk: 'Arm (fra skulder til håndledd)'},
+    {romanization: 'Dari', norsk: 'Ben (fra hofteben til ankel)'},
+    {romanization: 'Batangson', norsk: 'Nederste del av håndflate'},
+    {romanization: 'Son', norsk: 'Hånd (fra håndleddet og ut) '},
+    {romanization: 'Bal', norsk: 'Fot (fra ankelen og ned) '},
+  ],
+  spark: [
+    {romanization: '', norsk: ''},
+    {romanization: 'Bandae dollyo chagi ', norsk: 'Hookspark'},
+    {romanization: 'Twio ap chagi', norsk: 'Hoppende frontspark'},
+  ],
+  monster: [
+    {romanization: ''},
+    {romanization: 'Taegeuk Yuk-jang'},
+    {romanization: 'Taegeuk Oh-jang'},
+    {romanization: 'Taegeuk Sah-jang'},
+  ],
+  oneStep: [ //Ilpoterian 1-6
+    {'': '', angrep: ' ap kobi area makki (tilbake), ap kobi momtong jireugi', forsvar: ''},
+  ],
+  selvforsvar: [
+    {teknikk: ''},
+    {teknikk: 'Forsvar mot rundspark'},
+  ],
+  brekking: [
+    {romanization: '', norsk: ''},
+    {romanization: 'Yop chagi ', norsk: 'Sidespark'},
+    {romanization: 'Naeryo chagi', norsk: 'Nedoverrettet spark'},
+    {romanization: 'Palkup dollyo chigi', norsk: 'Albueslag'},
+  ],
+};
+const cup3 = {
+  teori: [
+    {romanization: '', norsk: ''},
+    {romanization: 'Gyokpa', norsk: 'Brekking'},
+    {romanization: 'Chong', norsk: 'Blå'},
+    {romanization: 'Hong', norsk: 'Rød'},
+    {romanization: 'Palkup', norsk: 'Albue'},
+    {romanization: 'Palmok', norsk: 'Håndledd'},
+    {romanization: 'Sonnal', norsk: 'Lillefingeresiden av en åpen hånd (knivhånd)'},
+    {romanization: 'Deongsonnal', norsk: 'Tommelfingersiden av en åpen hånd'},
+    {romanization: 'Jabki', norsk: 'Grep'},
+    {romanization: 'Mureup', norsk: 'Kne'},
+  ],
+  spark: [
+    {romanization: '', norsk: ''},
+    {romanization: 'Momdollyo chagi', norsk: 'Roterende frontspark (spinnkick)'},
+    {romanization: 'Twio yop chagi', norsk: 'Hoppende sidespark (flykick)'},
+  ],
+  monster: [
+    {romanization: ''},
+    {romanization: 'Taegeuk Chil-jang'},
+    {romanization: 'Taegeuk Yuk-jang'},
+    {romanization: 'Taegeuk Oh-jang'},
+  ],
+  oneStep: [ //Ilpoterian 1-6
+    {'': '', angrep: ' ap kobi area makki (tilbake), ap kobi momtong jireugi', forsvar: ''},
+  ],
+  selvforsvar: [
+    {teknikk: ''},
+    {teknikk: 'Forsvar mot rundspark'},
+  ],
+  brekking: [
+    {romanization: '', norsk: ''},
+    {romanization: 'Dwit chagi ', norsk: 'Bakspark'},
+    {romanization: 'Dolyo chagi', norsk: 'Rundspark'},
+    {romanization: 'Momtong jireugi', norsk: 'Rett slag'},
+  ],
+};
+const cup2 = {
+  teori: [
+    {romanization: '', norsk: ''},
+    {romanization: 'Kukki', norsk: 'Flagg'},
+    {romanization: 'Tae', norsk: 'Fot'},
+    {romanization: 'Kwon', norsk: 'Hånd'},
+    {romanization: 'Do', norsk: 'Kunst/vei'},
+    {romanization: 'Teok', norsk: 'Kjeve'},
+    {romanization: 'Tae Kyon', norsk: 'Opphavet til dagens taekwondo'},
+  ],
+  spark: [
+    {romanization: '', norsk: ''},
+    {romanization: 'Momdollyo chagi', norsk: 'Roterende frontspark (spinnkick)'},
+    {romanization: 'Twio yop chagi', norsk: 'Hoppende sidespark (flykick)'},
+  ],
+  monster: [
+    {romanization: ''},
+    {romanization: 'Taegeuk Chil-jang'},
+    {romanization: 'Taegeuk Yuk-jang'},
+    {romanization: 'Taegeuk Oh-jang'},
+  ],
+  oneStep: [ //Ilpoterian 1-6
+    {'': '', angrep: ' ap kobi area makki (tilbake), ap kobi momtong jireugi', forsvar: ''},
+  ],
+  selvforsvar: [
+    {teknikk: ''},
+    {teknikk: 'Forsvar mot rundspark'},
+  ],
+  brekking: [
+    {romanization: '', norsk: ''},
+    {romanization: 'Dwit chagi ', norsk: 'Bakspark'},
+    {romanization: 'Dolyo chagi', norsk: 'Rundspark'},
+    {romanization: 'Momtong jireugi', norsk: 'Rett slag'},
   ],
 };
