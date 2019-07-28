@@ -43,27 +43,6 @@ header button {
 body {
   overflow: hidden;
 }
-.contents #listWords {
-  overflow: scroll;
-  height: 100vh;
-}
-.contents #listWords div {
-  font-size: 1.6rem;
-  color: black;
-  background-color: white;
-  border-radius: 5px;
-  display: grid;
-  grid-template-columns: 30% 30% 40%;
-  justify-content: space-around;
-  margin: 3px 0;
-}
-.contents .cardsMain {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* flex-direction: column; */
-  padding: 5px;
-}
 .contents {
   display: none;
   animation: fadein 1s linear;
@@ -79,10 +58,6 @@ a, button {
 i {
   font-family: 'notoEmoji', Fallback, sans-serif;
   font-style: normal;
-}
-#echange {
-  font-weight: bold;
-  margin: 1.4rem 0 2rem 0;
 }
 footer {
   position: absolute;
@@ -114,6 +89,9 @@ footer .active:after {
   left: 50%;
   transform: translate(-50%,0);
 }
+.navBox a button {
+  text-align: left;
+}
 button {
   position: relative;
   background-color: white;
@@ -133,7 +111,7 @@ button.btn:active {
   transform: translateY(3px);
 }
 #mainmenu {
-  overflow: scroll;
+  overflow-y: scroll;
   height: 100vh;
 }
 .popup {
