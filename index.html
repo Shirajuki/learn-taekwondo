@@ -11,16 +11,24 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 	<script type="text/javascript">
 	// https://emojipedia.org/symbols/
-		setTimeout(showPage, 1400);
-	  function showPage() {
-			document.getElementById("loader").style.visibility = "hidden";
-			document.getElementById("loader").style.opacity = 0;
-	    setTimeout(() => {
-	      document.getElementById("loader").style.display = "none";
-	    },500)
+		setTimeout(_ => showPage(false), 1400);
+	  function showPage(bool) {
+			if (!bool) {
+				document.getElementById("loader").style.visibility = "hidden";
+				document.getElementById("loader").style.opacity = 0;
+				setTimeout(() => {
+					document.getElementById("loader").style.display = "none";
+				},500)
+			} else {
+				document.getElementById("loader").style.visibility = "visible";
+				document.getElementById("loader").style.opacity = 1;
+				document.getElementById("loader").style.display = "flex";
+			}
 	  }
 		let contents, menyButtons;
 		let content, buttons;
+		let videoPopup, closePopup;
+		let poomsaeBtns, youtubeFrame;
 		// Onload DOM and Event setups. Also calls some functions to initialize the app.
 		window.onload = () => {
 		// DOM - footer
@@ -30,44 +38,62 @@
 			for (let c of menyButtons) {
 				c.onclick = function() {menyChange(this.name,contents,menyButtons)};
 			}
+			youtubeFrame = document.getElementById('youtubeFrame');
+			poomsaeBtns = document.getElementsByName('poomsaeBtns');
+			for (let p of poomsaeBtns) {
+				p.onclick = function() {
+					changeVideo(this.id,youtubeFrame);
+					showPage(true);
+					setTimeout(_ => {
+						showPage(false);
+						openClose(true,videoPopup)
+					}, 1400);
+				};
+			}
+			videoPopup = document.getElementById('videoPopup');
+			closePopup = document.getElementsByClassName('closePopup')
+			for (let c of closePopup) {
+				c.onclick = function() {
+					openClose(false,this.parentElement);
+					changeVideo("",youtubeFrame);;
+				};
+			}
+			// openClose(true, videoPopup);
 			loadButtons();
 			menyChange(0,contents,menyButtons);
+		}
+		function changeVideo(url,iframe) {
+			iframe.src = `https://www.youtube.com/embed/${url}`;
 		}
 		function menyChange(value,contents,menyButtons) {
 			for (let i = 0; i < contents.length; i++) {
 				menyButtons[i].classList.remove('active');
 				contents[i].style.display = 'none';
 			}
-			menyButtons[value].classList.add('active');
-			contents[value].style.display = 'block';
+			setTimeout(_ => {
+				menyButtons[value].classList.add('active');
+				contents[value].style.display = 'block';
+			},0)
 
 			if (value == 0) {
 	      content.innerHTML = `
 	      <h2>Pensum</h2>
 	      <div class="navBox">
-	        <a><button id="cup10">10. cup [Hvit]</button></a>
-	        <a><button id="cup8">8. cup [Gul]</button></a>
-	        <a><button id="cup7">7. cup [Gul #stripe]</button></a>
-	        <a><button id="cup6">6. cup [Grønn]</button></a>
-	        <a><button id="cup5">5. cup [Grønn #stripe]</button></a>
-	        <a><button id="cup4">4. cup [Blå]</button></a>
-	        <a><button id="cup3">3. cup [Blå #stripe]</button></a>
-	        <a><button id="cup2">2. cup [Rød]</button></a>
-	        <a><button id="cup1">1. cup [Rød #stripe]</button></a>
+					<a><button name="pensumBtns" id="cup10">10. cup [Hvit]</button></a>
+					<a><button name="pensumBtns" id="cup8">8. cup [Gul]</button></a>
+					<a><button name="pensumBtns" id="cup7">7. cup [Gul #]</button></a>
+					<a><button name="pensumBtns" id="cup6">6. cup [Grønn]</button></a>
+					<a><button name="pensumBtns" id="cup5">5. cup [Grønn #]</button></a>
+					<a><button name="pensumBtns" id="cup4">4. cup [Blå]</button></a>
+					<a><button name="pensumBtns" id="cup3">3. cup [Blå #]</button></a>
+					<a><button name="pensumBtns" id="cup2">2. cup [Rød]</button></a>
+					<a><button name="pensumBtns" id="cup1">1. cup [Rød #]</button></a>
 	      </div>`
 	      loadButtons();
 	    } else if (value == 1) {
 	      content.innerHTML = `
-				<h2>Mønster<h2>
-				<a name="https://youtu.be/w5V6Q5bl670"><button>Taeguk Il-jang</button></a>
-				<a name="02. Taeguk_I_Jang.mp4"><button>Taeguk I-jang</button></a>
-				<a name="03. Taeguk_Sam_Jang.mp4"><button>Taeguk Sam-jang</button></a>
-				<a name="04. Taeguk_Sa_Jang.mp4"><button>Taeguk Sa-jang</button></a>
-				<a name="05. Taeguk_Oh_Jang.mp4"><button>Taeguk Oh-jang</button></a>
-				<a name="06. Taeguk_Yuk_Jang.mp4"><button>Taeguk Yuk-jang</button></a>
-				<a name="07. Taeguk_Chil_Jang.mp4"><button>Taeguk Chil-jang</button></a>
-				<a name="08. Taeguk_Pal_Jang.mp4"><button>Taeguk Pal-jang</button></a>
-	      `
+				<h2>2<h2>
+				`
 	    } else if (value == 2) {
 	      content.innerHTML = `
 	      <h2>3</h2>
@@ -75,10 +101,14 @@
 	    }
 		}
 		function loadButtons() {
-	    buttons = document.querySelectorAll('a button');
+	    buttons = document.getElementsByName('pensumBtns');
 	    for (let button of buttons) {
 	      button.onclick = function() {
-	        loadPensum(this.id);
+					showPage(true);
+					setTimeout(_ => {
+						showPage(false);
+						loadPensum(this.id);
+					}, 1400);
 	      }
 	    }
 	  }
@@ -154,7 +184,6 @@
 		  if (bool) {
 		    dom.style.visibility = 'visible';
 		    dom.style.opacity = '1';
-
 				if (animateType !== 0) {
 					for (let i = 0; i < dom.childElementCount; i++) {
 						toggleAnimate(dom.children[i],`animate-${animateType}`);
@@ -183,15 +212,15 @@
 			<div id="mainmenu">
 				<h2>Pensum</h2>
 				<div class="navBox">
-					<a><button id="cup10">10. cup [Hvit]</button></a>
-					<a><button id="cup8">8. cup [Gul]</button></a>
-					<a><button id="cup7">7. cup [Gul #]</button></a>
-					<a><button id="cup6">6. cup [Grønn]</button></a>
-					<a><button id="cup5">5. cup [Grønn #]</button></a>
-					<a><button id="cup4">4. cup [Blå]</button></a>
-					<a><button id="cup3">3. cup [Blå #]</button></a>
-					<a><button id="cup2">2. cup [Rød]</button></a>
-					<a><button id="cup1">1. cup [Rød #]</button></a>
+					<a><button name="pensumBtns" id="cup10">10. cup [Hvit]</button></a>
+					<a><button name="pensumBtns" id="cup8">8. cup [Gul]</button></a>
+					<a><button name="pensumBtns" id="cup7">7. cup [Gul #]</button></a>
+					<a><button name="pensumBtns" id="cup6">6. cup [Grønn]</button></a>
+					<a><button name="pensumBtns" id="cup5">5. cup [Grønn #]</button></a>
+					<a><button name="pensumBtns" id="cup4">4. cup [Blå]</button></a>
+					<a><button name="pensumBtns" id="cup3">3. cup [Blå #]</button></a>
+					<a><button name="pensumBtns" id="cup2">2. cup [Rød]</button></a>
+					<a><button name="pensumBtns" id="cup1">1. cup [Rød #]</button></a>
 				</div>
 			</div>
 		</div>
@@ -199,24 +228,33 @@
 		<div class='contents' id="page2">
 			<div class="">
 				<h2>Mønster<h2>
-					<a href="01. Taeguk_Il_Jang.mp4"><button>Taeguk Il-jang</button></a>
-					<a href="02. Taeguk_I_Jang.mp4"><button>Taeguk I-jang</button></a>
-					<a href="03. Taeguk_Sam_Jang.mp4"><button>Taeguk Sam-jang</button></a>
-					<a href="04. Taeguk_Sa_Jang.mp4"><button>Taeguk Sa-jang</button></a>
-					<a href="05. Taeguk_Oh_Jang.mp4"><button>Taeguk Oh-jang</button></a>
-					<a href="06. Taeguk_Yuk_Jang.mp4"><button>Taeguk Yuk-jang</button></a>
-					<a href="07. Taeguk_Chil_Jang.mp4"><button>Taeguk Chil-jang</button></a>
-					<a href="08. Taeguk_Pal_Jang.mp4"><button>Taeguk Pal-jang</button></a>
+					<a><button name="poomsaeBtns" id="w5V6Q5bl670">Taeguk Il-jang</button></a>
+					<a><button name="poomsaeBtns" id="B2zritptm2Y">Taeguk I-jang</button></a>
+					<a><button name="poomsaeBtns" id="FZaplFR-0xA">Taeguk Sam-jang</button></a>
+					<a><button name="poomsaeBtns" id="oWAQvoyfUIw">Taeguk Sa-jang</button></a>
+					<a><button name="poomsaeBtns" id="9zA9SipyMuM">Taeguk Oh-jang</button></a>
+					<a><button name="poomsaeBtns" id="nATlp_VFne4">Taeguk Yuk-jang</button></a>
+					<a><button name="poomsaeBtns" id="8FD2VjUgris">Taeguk Chil-jang</button></a>
+					<a><button name="poomsaeBtns" id="mTzt6P53yuQ">Taeguk Pal-jang</button></a>
 			</div>
 		</div>
-
 		<!-- PAGE 3 -->
 		<div class='contents'>
 			<div class="">
-				<h2>3</h2>
+				<h2>Spark teknikker [TBA]</h2>
 			</div>
 		</div>
 	</main>
+	<!-- Pop-ups -->
+	<div class="popup" id="videoPopup">
+		<a class="closePopup"><i>❌</i></a>
+		<div class="video-container">
+			<iframe id="youtubeFrame" width="560" height="315"
+			src="https://www.youtube.com/embed/w5V6Q5bl670" frameborder="0"
+			allowfullscreen>
+		</iframe>
+		</div>
+	</div>
 	<!-- Footer -->
 	<footer>
 		<button name="0" class='menyButtons' class='active'><i>🏠</i></button>
