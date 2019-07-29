@@ -43,11 +43,11 @@
 			for (let p of poomsaeBtns) {
 				p.onclick = function() {
 					changeVideo(this.id,youtubeFrame);
-					showPage(true);
+					// showPage(true);
 					setTimeout(_ => {
-						showPage(false);
+						// showPage(false);
 						openClose(true,videoPopup)
-					}, 1400);
+					}, 100);
 				};
 			}
 			videoPopup = document.getElementById('videoPopup');
@@ -209,7 +209,7 @@
 	<main>
 		<!-- PAGE 1 -->
 		<div class='contents' id="page1">
-			<div id="mainmenu">
+			<div class="bigDiv" id="mainmenu">
 				<h2>Pensum</h2>
 				<div class="navBox">
 					<a><button name="pensumBtns" id="cup10">10. cup [Hvit]</button></a>
@@ -226,21 +226,23 @@
 		</div>
 		<!-- PAGE 2 -->
 		<div class='contents' id="page2">
-			<div class="">
+			<div class="bigDiv">
 				<h2>Mønster<h2>
-					<a><button name="poomsaeBtns" id="w5V6Q5bl670">Taeguk Il-jang</button></a>
-					<a><button name="poomsaeBtns" id="B2zritptm2Y">Taeguk I-jang</button></a>
-					<a><button name="poomsaeBtns" id="FZaplFR-0xA">Taeguk Sam-jang</button></a>
-					<a><button name="poomsaeBtns" id="oWAQvoyfUIw">Taeguk Sa-jang</button></a>
-					<a><button name="poomsaeBtns" id="9zA9SipyMuM">Taeguk Oh-jang</button></a>
-					<a><button name="poomsaeBtns" id="nATlp_VFne4">Taeguk Yuk-jang</button></a>
-					<a><button name="poomsaeBtns" id="8FD2VjUgris">Taeguk Chil-jang</button></a>
-					<a><button name="poomsaeBtns" id="mTzt6P53yuQ">Taeguk Pal-jang</button></a>
+					<div class="navBox">
+						<a><button name="poomsaeBtns" id="w5V6Q5bl670">Taeguk Il-jang</button></a>
+						<a><button name="poomsaeBtns" id="B2zritptm2Y">Taeguk I-jang</button></a>
+						<a><button name="poomsaeBtns" id="FZaplFR-0xA">Taeguk Sam-jang</button></a>
+						<a><button name="poomsaeBtns" id="oWAQvoyfUIw">Taeguk Sa-jang</button></a>
+						<a><button name="poomsaeBtns" id="9zA9SipyMuM">Taeguk Oh-jang</button></a>
+						<a><button name="poomsaeBtns" id="nATlp_VFne4">Taeguk Yuk-jang</button></a>
+						<a><button name="poomsaeBtns" id="8FD2VjUgris">Taeguk Chil-jang</button></a>
+						<a><button name="poomsaeBtns" id="mTzt6P53yuQ">Taeguk Pal-jang</button></a>
+					</div>
 			</div>
 		</div>
 		<!-- PAGE 3 -->
 		<div class='contents'>
-			<div class="">
+			<div class="bigDiv">
 				<h2>Spark teknikker [TBA]</h2>
 			</div>
 		</div>
