@@ -29,6 +29,7 @@
 		let content, buttons;
 		let videoPopup, closePopup;
 		let poomsaeBtns, youtubeFrame;
+		let poomsae, hyong, monsterBtn1, monsterBtn2;
 		// Onload DOM and Event setups. Also calls some functions to initialize the app.
 		window.onload = () => {
 		// DOM - footer
@@ -58,12 +59,33 @@
 					changeVideo("",youtubeFrame);;
 				};
 			}
+			poomsae = document.getElementById('poomsae');
+			hyong = document.getElementById('hyong');
+			monsterBtn1 = document.getElementById('monsterBtn1')
+			monsterBtn2 = document.getElementById('monsterBtn2')
+			monsterBtn1.onclick = function() {monster(poomsae, hyong, this, monsterBtn2)};
+			monsterBtn2.onclick = function() {monster(hyong, poomsae, this, monsterBtn1)};
+			monster(poomsae, hyong, monsterBtn1, monsterBtn2);
 			// openClose(true, videoPopup);
 			loadButtons();
 			menyChange(0,contents,menyButtons);
 		}
 		function changeVideo(url,iframe) {
 			iframe.src = `https://www.youtube.com/embed/${url}`;
+		}
+		function monster(poomsae, hyong, btn1, btn2) {
+			btn1.classList.remove('monsterOff');
+			btn2.classList.add('monsterOff');
+			poomsae.style.order = 2;
+			poomsae.style.position = "relative";
+			poomsae.style.pointerEvents = "all";
+			poomsae.style.opacity = 1;
+			poomsae.style.width = "100%";
+			hyong.style.order = 1;
+			hyong.style.position = "absolute";
+			hyong.style.pointerEvents = "none";
+			hyong.style.opacity = 0;
+			hyong.style.width = "97%";
 		}
 		function menyChange(value,contents,menyButtons) {
 			for (let i = 0; i < contents.length; i++) {
@@ -77,7 +99,6 @@
 
 			if (value == 0) {
 	      content.innerHTML = `
-	      <h2>Pensum</h2>
 	      <div class="navBox">
 					<a><button name="pensumBtns" id="cup10">10. cup [Hvit]</button></a>
 					<a><button name="pensumBtns" id="cup8">8. cup [Gul]</button></a>
@@ -113,18 +134,40 @@
 	    }
 	  }
 		function loadPensum(id) {
+			const cup = eval(id);
 	    content.innerHTML = `
 	    <div>
 	      <h2>TEORI</h2>
 	      <table id='teori'>
 	      </table>
 	    </div>
-	    <button>ØV</button>
+			<button>ØV</button>
+			`;
+			if (cup.facts !== undefined) {
+				content.innerHTML += `
+					<div>
+						<h2>TEORI PENSUM</h2>
+						<p>${cup.facts}</p>
+					</div>
+				`;
+			}
+			content.innerHTML += `
 	    <div>
 	      <h2>SPARK</h2>
 	      <table id='spark'>
 	      </table>
 	    </div>
+			`;
+			if (cup.sparkKombi !== undefined) {
+					content.innerHTML += `
+						<div>
+				      <h2>SPARK KOMBINASJONER</h2>
+				      <table id='sparkKombi'>
+				      </table>
+				    </div>
+					`;
+			}
+			content.innerHTML += `
 	    <div>
 	      <h2>MØNSTER</h2>
 	      <table id='monster'>
@@ -132,7 +175,7 @@
 	    </div>
 	    <div>
 	      <h2>ONE STEP</h2>
-	      <p>Ilpoteranian something</p>
+	      <p>${cup.oneoneStep}</p>
 	      <table id='oneStep'>
 	      </table>
 	    </div>
@@ -142,23 +185,36 @@
 	      </table>
 	    </div>
 	    <h2>SPARRING</h2>`;
+			if (cup.brekking !== undefined) {
+					content.innerHTML += `
+						<div>
+				      <h2>BREKKING</h2>
+				      <table id='brekking'>
+				      </table>
+				    </div>
+					`;
+			}
 	    setTimeout(_=> {
-	      let cup = eval(id);
 	      let teoriArr = cup.teori;
 	      let sparkArr = cup.spark;
 	      let monsterArr = cup.monster;
 	      let oneStepArr = cup.oneStep;
 	      let selvforsvarArr = cup.selvforsvar;
 	      console.log(eval(id));
-
+				if (cup.sparkKombi !== undefined) {
+						createTable(cup.sparkKombi,document.getElementById('sparkKombi'));
+				}
+				if (cup.brekking !== undefined) {
+						createTable(cup.brekking,document.getElementById('brekking'));
+				}
 	      createTable(teoriArr,document.getElementById('teori'));
 	      createTable(sparkArr,document.getElementById('spark'));
 	      createTable(monsterArr,document.getElementById('monster'));
-	      createTable(oneStepArr,document.getElementById('oneStep'));
+	      createTable(oneStepArr,document.getElementById('oneStep'),"list");
 	      createTable(selvforsvarArr,document.getElementById('selvforsvar'));
 	    },0)
 	  }
-	  function createTable(objArr,output) {
+	  function createTable(objArr,output,type) {
 	    output.innerHTML = '';
 	    let keys = Object.keys(objArr[0]);
 	    for (let i = 0; i < objArr.length; i++) {
@@ -167,6 +223,18 @@
 	      for (let j = 0; j < values.length; j++) {
 	        let td = (i > 0) ? (document.createElement('td')) : (document.createElement('th'))
 	        td.innerHTML = (i > 0) ? (values[j]) : (keys[j].toUpperCase().replace('AAR','')); // Overskrift som store bokstaver
+
+					// OneSteps:
+					if (type == 'list' && j > 0 && i > 0) {
+						td.innerHTML = "";
+						let ul = document.createElement('ul');
+						for (const p of values[j]) {
+							let li = document.createElement('li');
+							li.innerHTML = p;
+							ul.appendChild(li);
+						}
+						td.appendChild(ul);
+					}
 	        tr.appendChild(td);
 	      }
 	      output.appendChild(tr);
@@ -209,8 +277,8 @@
 	<main>
 		<!-- PAGE 1 -->
 		<div class='contents' id="page1">
+			<h2>Pensum</h2>
 			<div class="bigDiv" id="mainmenu">
-				<h2>Pensum</h2>
 				<div class="navBox">
 					<a><button name="pensumBtns" id="cup10">10. cup [Hvit]</button></a>
 					<a><button name="pensumBtns" id="cup8">8. cup [Gul]</button></a>
@@ -226,9 +294,13 @@
 		</div>
 		<!-- PAGE 2 -->
 		<div class='contents' id="page2">
+			<h2>Mønster<h2>
+			<div class="monsterType">
+				<a><button id="monsterBtn1" class="monsterOff">WTF</button></a>
+				<a><button id="monsterBtn2">ITF</button></a>
+			</div>
 			<div class="bigDiv">
-				<h2>Mønster<h2>
-					<div class="navBox">
+					<div class="navBox" id="poomsae">
 						<a><button name="poomsaeBtns" id="w5V6Q5bl670">Taeguk Il-jang</button></a>
 						<a><button name="poomsaeBtns" id="B2zritptm2Y">Taeguk I-jang</button></a>
 						<a><button name="poomsaeBtns" id="FZaplFR-0xA">Taeguk Sam-jang</button></a>
@@ -238,12 +310,31 @@
 						<a><button name="poomsaeBtns" id="8FD2VjUgris">Taeguk Chil-jang</button></a>
 						<a><button name="poomsaeBtns" id="mTzt6P53yuQ">Taeguk Pal-jang</button></a>
 					</div>
+					<div class="navBox" id="hyong">
+						<a><button name="poomsaeBtns" id="w5V6Q5bl670">Chon-ji</button></a>
+						<a><button name="poomsaeBtns" id="B2zritptm2Y">Taeguk I-jang</button></a>
+						<a><button name="poomsaeBtns" id="FZaplFR-0xA">Taeguk Sam-jang</button></a>
+						<a><button name="poomsaeBtns" id="oWAQvoyfUIw">Taeguk Sa-jang</button></a>
+						<a><button name="poomsaeBtns" id="9zA9SipyMuM">Taeguk Oh-jang</button></a>
+						<a><button name="poomsaeBtns" id="nATlp_VFne4">Taeguk Yuk-jang</button></a>
+						<a><button name="poomsaeBtns" id="8FD2VjUgris">Taeguk Chil-jang</button></a>
+						<a><button name="poomsaeBtns" id="mTzt6P53yuQ">Taeguk Pal-jang</button></a>
+					</div>
 			</div>
+
 		</div>
 		<!-- PAGE 3 -->
 		<div class='contents'>
+			<h2>Spark teknikker [TBA]</h2>
 			<div class="bigDiv">
-				<h2>Spark teknikker [TBA]</h2>
+				<div class="navBox">
+					<a><button name="kickBtns" id="w5V6Q5bl670">Ap chagi</button></a>
+					<a><button name="kickBtns" id="B2zritptm2Y">Dollyo chagi</button></a>
+					<a><button name="kickBtns" id="FZaplFR-0xA">Yop chagi</button></a>
+					<a><button name="kickBtns" id="oWAQvoyfUIw">Apchok ap chagi</button></a>
+					<a><button name="kickBtns" id="9zA9SipyMuM">An chagi</button></a>
+					<a><button name="kickBtns" id="nATlp_VFne4">Bakkat Chagi</button></a>
+				</div>
 			</div>
 		</div>
 	</main>

@@ -10,44 +10,20 @@
   align-items: center;
   z-index: 8888;
   background-color: var(--theme-color1);
-  background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  background: black;
+  background-image: url(../giphy.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); */
   transition: .3s;
 }
-#preloader {
-  position: absolute;
-  top: 50%;
-  z-index: 9999;
-  width: 120px;
-  height: 120px;
-  transform: translate(0,-50%);
-  border: 22px solid #666;
-
-  border-radius: 50%;
-  border-top: 22px solid #ad1385;
-  border-left: 22px solid #ad1385;
-  border-right: 22px solid #ad1385;
-
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-
-}
-@-webkit-keyframes spin {
-  0% { -webkit-transform: translate(0,-50%) rotate(0deg); }
-  100% { -webkit-transform: translate(0,-50%) rotate(360deg); }
-}
-@keyframes spin {
-  0% { transform: translate(0,-50%) rotate(0deg); }
-  100% { transform: translate(0,-50%) rotate(360deg); }
-}
-
 .spinner {
   width: 40px;
   height: 40px;
   margin: 100px auto;
-  background-color: rgba(255,220,220,0.9);
+  background-color: var(--base-color2);
   opacity: 1;
-
+  transform: scale(0);
   border-radius: 100%;
   -webkit-animation: sk-scaleout 2.0s infinite ease-in-out;
   animation: sk-scaleout 2.0s infinite ease-in-out;
@@ -58,8 +34,8 @@
     transform: scale(0);
     opacity: 1;
   } 100% {
-    -webkit-transform: scale(40.0);
-    transform: scale(40.0);
+    -webkit-transform: scale(25);
+    transform: scale(25);
     opacity: 0;
   }
 }

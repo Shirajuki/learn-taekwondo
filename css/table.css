@@ -14,7 +14,6 @@ table td, table th {
 table tr {
 	background-color: #fff;
 }
-table tr:hover {background-color: #ddd;}
 table th {
   padding-top: 12px;
   padding-bottom: 12px;

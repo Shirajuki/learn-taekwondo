@@ -1,4 +1,5 @@
 const cup10 = {
+  facts: "Beltebetydning: Symboliserer det uvitende. Alle nybegynnere har dette belte. Du får innblikk i hva taekwondo er og lærer det mest grunnleggende.",
   teori: [
     {koreansk: '', norsk: ''},
     {koreansk: 'Charyôt', norsk: 'Giv akt stilling'},
@@ -15,14 +16,15 @@ const cup10 = {
     {koreansk: 'Yop chagi',norsk: 'Sidespark'},
   ],
   monster: [
-    {koreansk: ''},
-    {koreansk: 'Taegeuk Il-jang'},
+    {poomse: '', hyong: ''},
+    {poomse: 'Taegeuk Il-jang', hyong: 'Chon-ji'},
   ],
+  oneoneStep: "Gibondongjak 1-3",
   oneStep: [
     {'': '', angrep: '', forsvar: ''},
-    {'': '1.', angrep: '<p>Dwit kobi area makki.</p><p>Ap kobi area jireugi</p><p>-</p>', forsvar: '<p>-</p><p>Dwit kobi area makki.</p><p>Ap kobi momtong jireugi.</p>'},
-    {'': '2.', angrep: '<p>Dwit kobi area makki.<p/><p>Ap kobi momtong jireugi.</p><p>-</p>', forsvar: '<p>-</p>Dwit kobi geodoreo makki.</p><p>Ap kobi momtong jireugi.</p>'},
-    {'': '3.', angrep: '<p>Dwit kobi oesantul makki.<p/><p>Ap kobi mejumeok olgul naeryo chigi.</p><p>-</p>', forsvar: '<p>-</p>Dwit kobi olgul makki.<p>Ap kobi olgul jireugi.</p>'},
+    {'': '1.', angrep: ["Dwit kobi area makki.","Ap kobi area jireugi","-"], forsvar: ["-","Dwit kobi area makki.","Ap kobi momtong jireugi."]},
+    {'': '2.', angrep: ["Dwit kobi area makki.","Ap kobi momtong jireugi.","-"], forsvar: ["-","Dwit kobi geodoreo makki.","Ap kobi momtong jireugi."]},
+    {'': '3.', angrep: ["Dwit kobi oesantul makki.","Ap kobi mejumeok olgul naeryo chigi.","-"], forsvar: ["-","Dwit kobi olgul makki.","Ap kobi olgul jireugi."]},
   ],
   selvforsvar: [
     {teknikk: ''},
@@ -30,6 +32,7 @@ const cup10 = {
   ],
 };
 const cup8 = {
+  facts: "Beltebetydning: Symboliserer jordens fruktbarhet. Man har forstått det grunnleggende i taekwondo.",
   teori: [
     {koreansk: '', norsk: ''},
     {koreansk: 'Dojang', norsk: 'Treningssal'},
@@ -49,15 +52,16 @@ const cup8 = {
     {koreansk: 'Bakkat chagi',norsk: 'Utadgående spark'},
   ],
   monster: [
-    {koreansk: ''},
-    {koreansk: 'Taegeuk I-jang'},
-    {koreansk: 'Taegeuk Il-jang'},
+    {poomse: '', hyong: ''},
+    {poomse: 'Taegeuk I-jang', hyong: 'Tan-gun'},
+    {poomse: 'Taegeuk Il-jang', hyong: 'Chon-ji'},
   ],
+  oneoneStep: "Gibondongjak 1-3 med venstre og høyre.",
   oneStep: [
     {'': '', angrep: '', forsvar: ''},
-    {'': '1.', angrep: 'Dwit kobi area makki.<br/>Ap kobi area jireugi.<br/>', forsvar: '<br/>Dwit kobi area makki.<br/>Ap kobi momtong jireugi.'},
-    {'': '2.', angrep: 'Dwit kobi area makki.<br/>Ap kobi momtong jireugi.<br/>', forsvar: '<br/>Dwit kobi geodoreo makki.<br/>Ap kobi momtong jireugi.'},
-    {'': '3.', angrep: 'Dwit kobi oesantul makki.<br/>Ap kobi mejumeok olgul naeryo chigi.<br/>', forsvar: '<br/>Dwit kobi olgul makki.<br/>Ap kobi olgul jireugi.'},
+    {'': '1.', angrep: ['Dwit kobi area makki.','Ap kobi area jireugi.','-'], forsvar: ['-','Dwit kobi area makki.','Ap kobi momtong jireugi.']},
+    {'': '2.', angrep: ['Dwit kobi area makki.','Ap kobi momtong jireugi.','-'], forsvar: ['-','Dwit kobi geodoreo makki.','Ap kobi momtong jireugi.']},
+    {'': '3.', angrep: ['Dwit kobi oesantul makki.','Ap kobi mejumeok olgul naeryo chigi.','-'], forsvar: ['-','Dwit kobi olgul makki.','Ap kobi olgul jireugi.']},
   ],
   selvforsvar: [
     {teknikk: ''},
@@ -65,6 +69,7 @@ const cup8 = {
   ],
 };
 const cup7 = {
+  facts: "Beltebetydning:  Symboliserer jordens fruktbarhet. Man har forstått det grunnleggende i taekwondo.",
   teori: [
     {koreansk: '', norsk: ''},
     {koreansk: 'Olgul', norsk: 'Fra kravebenet og opp'},
@@ -77,18 +82,19 @@ const cup7 = {
     {koreansk: 'Mira chagi', norsk: 'Dyttespark'},
   ],
   monster: [
-    {koreansk: ''},
-    {koreansk: 'Taegeuk Sam-jang'},
-    {koreansk: 'Taegeuk I-jang'},
+    {poomse: '', hyong: ''},
+    {poomse: 'Taegeuk Sam-jang', hyong: 'To-san'},
+    {poomse: 'Taegeuk I-jang', hyong: 'Tan-gun'},
   ],
+  oneoneStep: "Gibondongjak 1-6",
   oneStep: [
     {'': '', angrep: '', forsvar: ''},
-    {'': '1.', angrep: 'Dwit kobi area makki.<br/>Ap kobi area jireugi.<br/>', forsvar: '<br/>Dwit kobi area makki.<br/>Ap kobi momtong jireugi.'},
-    {'': '2.', angrep: 'Dwit kobi area makki.<br/>Ap kobi momtong jireugi.<br/>', forsvar: '<br/>Dwit kobi geodoreo makki.<br/>Ap kobi momtong jireugi.'},
-    {'': '3.', angrep: 'Dwit kobi oesantul makki.<br/>Ap kobi mejumeok olgul naeryo chigi.<br/>', forsvar: '<br/>Dwit kobi olgul makki.<br/>Ap kobi olgul jireugi.'},
-    {'': '4', angrep: 'Dwit kobi area makki.<br/>Ap kobi momtong jireugi.</br><br/>', forsvar: '<br/>Dwit kobi sonnal geodoreo makki.<br/>Ap chagi (høyre fot).<br/>Juchum seogi dubon jireugi.'},
-    {'': '5', angrep: 'Dwit kobi area makki.<br/>Ap kobi momtong jireugi.</br><br/>', forsvar: '<br/>Dwit kobi sonnal geodoreo makki.<br/>Dollyo chagi (høyre fot).<br/>Ap kobi olgul geodoreo ap chigi.'},
-    {'': '6', angrep: 'Dwit kobi area makki.<br/>Ap kobi momtong jireugi.</br><br/>', forsvar: '<br/>Dwit kobi sonnal geodoreo makki.<br/>Yop chagi (høyre fot).<br/>Dwit kobi sonnal bakkat chigi.'},
+    {'': '1.', angrep: ['Dwit kobi area makki.','Ap kobi area jireugi.','-'], forsvar: ['-','Dwit kobi area makki.','Ap kobi momtong jireugi.']},
+    {'': '2.', angrep: ['Dwit kobi area makki.','Ap kobi momtong jireugi.','-'], forsvar: ['-','Dwit kobi geodoreo makki.','Ap kobi momtong jireugi.']},
+    {'': '3.', angrep: ['Dwit kobi oesantul makki.','Ap kobi mejumeok olgul naeryo chigi.','-'], forsvar: ['-','Dwit kobi olgul makki.','Ap kobi olgul jireugi.']},
+    {'': '4', angrep: ['Dwit kobi area makki.','Ap kobi momtong jireugi.','-','-'], forsvar: ['-','Dwit kobi sonnal geodoreo makki.','Ap chagi (høyre fot).','Juchum seogi dubon jireugi.']},
+    {'': '5', angrep: ['Dwit kobi area makki.','Ap kobi momtong jireugi.','-','-'], forsvar: ['-','Dwit kobi sonnal geodoreo makki.','Dollyo chagi (høyre fot).','Ap kobi olgul geodoreo ap chigi.']},
+    {'': '6', angrep: ['Dwit kobi area makki.','Ap kobi momtong jireugi.','-','-'], forsvar: ['-','Dwit kobi sonnal geodoreo makki.','Yop chagi (høyre fot).','Dwit kobi sonnal bakkat chigi.']},
   ],
   selvforsvar: [
     {teknikk: ''},
@@ -96,6 +102,7 @@ const cup7 = {
   ],
 };
 const cup6 = {
+  facts: "Beltebetydning: Symboliserer planten som gror og har begynt å bære frukter. Man har forstått og kan utføre det grunnleggende i taekwondo.",
   teori: [
     {koreansk: '', norsk: ''},
     {koreansk: 'Mori', norsk: 'Hode'},
@@ -113,18 +120,20 @@ const cup6 = {
     {koreansk: 'Naeryo chagi', norsk: 'Frontspark med kraft nedover'},
   ],
   monster: [
-    {koreansk: ''},
-    {koreansk: 'Taegeuk Sah-jang'},
-    {koreansk: 'Taegeuk Sam-jang'},
+    {poomse: '', hyong: ''},
+    {poomse: 'Taegeuk Sah-jang', hyong: 'Won-hyo'},
+    {poomse: 'Taegeuk Sam-jang', hyong: 'To-san'},
+    {poomse: 'Taegeuk I-jang', hyong: 'Tan-gun'},
   ],
+  oneoneStep: "Gibondongjak 1-6 med venstre og høyre.",
   oneStep: [
     {'': '', angrep: '', forsvar: ''},
-    {'': '1.', angrep: 'Dwit kobi area makki.<br/>Ap kobi area jireugi.<br/>', forsvar: '<br/>Dwit kobi area makki.<br/>Ap kobi momtong jireugi.'},
-    {'': '2.', angrep: 'Dwit kobi area makki.<br/>Ap kobi momtong jireugi.<br/>', forsvar: '<br/>Dwit kobi geodoreo makki.<br/>Ap kobi momtong jireugi.'},
-    {'': '3.', angrep: 'Dwit kobi oesantul makki.<br/>Ap kobi mejumeok olgul naeryo chigi.<br/>', forsvar: '<br/>Dwit kobi olgul makki.<br/>Ap kobi olgul jireugi.'},
-    {'': '4', angrep: 'Dwit kobi area makki.<br/>Ap kobi momtong jireugi.</br><br/>', forsvar: '<br/>Dwit kobi sonnal geodoreo makki.<br/>Ap chagi (høyre fot).<br/>Juchum seogi dubon jireugi.'},
-    {'': '5', angrep: 'Dwit kobi area makki.<br/>Ap kobi momtong jireugi.</br><br/>', forsvar: '<br/>Dwit kobi sonnal geodoreo makki.<br/>Dollyo chagi (høyre fot).<br/>Ap kobi olgul geodoreo ap chigi.'},
-    {'': '6', angrep: 'Dwit kobi area makki.<br/>Ap kobi momtong jireugi.</br><br/>', forsvar: '<br/>Dwit kobi sonnal geodoreo makki.<br/>Yop chagi (høyre fot).<br/>Dwit kobi sonnal bakkat chigi.'},
+    {'': '1.', angrep: ['Dwit kobi area makki.','Ap kobi area jireugi.','-'], forsvar: ['-','Dwit kobi area makki.','Ap kobi momtong jireugi.']},
+    {'': '2.', angrep: ['Dwit kobi area makki.','Ap kobi momtong jireugi.','-'], forsvar: ['-','Dwit kobi geodoreo makki.','Ap kobi momtong jireugi.']},
+    {'': '3.', angrep: ['Dwit kobi oesantul makki.','Ap kobi mejumeok olgul naeryo chigi.','-'], forsvar: ['-','Dwit kobi olgul makki.','Ap kobi olgul jireugi.']},
+    {'': '4', angrep: ['Dwit kobi area makki.','Ap kobi momtong jireugi.','-','-'], forsvar: ['-','Dwit kobi sonnal geodoreo makki.','Ap chagi (høyre fot).','Juchum seogi dubon jireugi.']},
+    {'': '5', angrep: ['Dwit kobi area makki.','Ap kobi momtong jireugi.','-','-'], forsvar: ['-','Dwit kobi sonnal geodoreo makki.','Dollyo chagi (høyre fot).','Ap kobi olgul geodoreo ap chigi.']},
+    {'': '6', angrep: ['Dwit kobi area makki.','Ap kobi momtong jireugi.','-','-'], forsvar: ['-','Dwit kobi sonnal geodoreo makki.','Yop chagi (høyre fot).','Dwit kobi sonnal bakkat chigi.']},
   ],
   selvforsvar: [
     {teknikk: ''},
@@ -132,6 +141,7 @@ const cup6 = {
   ],
 };
 const cup5 = {
+  facts: "Beltebetydning: Symboliserer planten som gror og har begynt å bære frukter. Man har forstått og kan utføre det grunnleggende i taekwondo.",
   teori: [
     {koreansk: '', norsk: ''},
     {koreansk: 'Kyoregi', norsk: 'Frikamp'},
@@ -152,11 +162,12 @@ const cup5 = {
     {koreansk: 'Apchok dolyo chagi', norsk: 'Rundspark med tåball'},
   ],
   monster: [
-    {koreansk: ''},
-    {koreansk: 'Taegeuk Oh-jang'},
-    {koreansk: 'Taegeuk Sah-jang'},
-    {koreansk: 'Taegeuk Sam-jang'},
+    {poomse: '', hyong: ''},
+    {poomse: 'Taegeuk Oh-jang', hyong: 'Yul-gok'},
+    {poomse: 'Taegeuk Sah-jang', hyong: 'Won-hyo'},
+    {poomse: 'Taegeuk Sam-jang', hyong: 'To-san'},
   ],
+  oneoneStep: "Ilpoterian 1-3",
   oneStep: [ //Ilpoterian 1-3
     {'': '', angrep: ' ap kobi area makki (tilbake), ap kobi momtong jireugi', forsvar: ''},
   ],
@@ -166,6 +177,7 @@ const cup5 = {
   ],
 };
 const cup4 = {
+  facts: "Beltebetydning: Symboliserer himmelen som planten strekker seg mot. Man kan stå frem og vise det grunnleggende i taekwondo.",
   teori: [
     {koreansk: '', norsk: ''},
     {koreansk: 'Pal', norsk: 'Arm (fra skulder til håndledd)'},
@@ -180,11 +192,12 @@ const cup4 = {
     {koreansk: 'Twio ap chagi', norsk: 'Hoppende frontspark'},
   ],
   monster: [
-    {koreansk: ''},
-    {koreansk: 'Taegeuk Yuk-jang'},
-    {koreansk: 'Taegeuk Oh-jang'},
-    {koreansk: 'Taegeuk Sah-jang'},
+    {poomse: '', hyong: ''},
+    {poomse: 'Taegeuk Yuk-jang', hyong: 'Chungun'},
+    {poomse: 'Taegeuk Oh-jang', hyong: 'Yul-gok'},
+    {poomse: 'Taegeuk Sah-jang', hyong: 'Won-hyo'},
   ],
+  oneoneStep: "Ilpoterian 1-6",
   oneStep: [ //Ilpoterian 1-6
     {'': '', angrep: ' ap kobi area makki (tilbake), ap kobi momtong jireugi', forsvar: ''},
   ],
@@ -200,6 +213,7 @@ const cup4 = {
   ],
 };
 const cup3 = {
+  facts: "Beltebetydning: Symboliserer himmelen som planten strekker seg mot. Man kan stå frem og vise det grunnleggende i taekwondo.",
   teori: [
     {koreansk: '', norsk: ''},
     {koreansk: 'Gyokpa', norsk: 'Brekking'},
@@ -218,11 +232,12 @@ const cup3 = {
     {koreansk: 'Twio yop chagi', norsk: 'Hoppende sidespark (flykick)'},
   ],
   monster: [
-    {koreansk: ''},
-    {koreansk: 'Taegeuk Chil-jang'},
-    {koreansk: 'Taegeuk Yuk-jang'},
-    {koreansk: 'Taegeuk Oh-jang'},
+    {poomse: '', hyong: ''},
+    {poomse: 'Taegeuk Chil-jang', hyong: 'Toi-gye'},
+    {poomse: 'Taegeuk Yuk-jang', hyong: 'Chungun'},
+    {poomse: 'Taegeuk Oh-jang', hyong: 'Yul-gok'},
   ],
+  oneoneStep: "Ilpoterian 1-6",
   oneStep: [ //Ilpoterian 1-6
     {'': '', angrep: ' ap kobi area makki (tilbake), ap kobi momtong jireugi', forsvar: ''},
   ],
@@ -238,6 +253,7 @@ const cup3 = {
   ],
 };
 const cup2 = {
+  facts: "Beltebetydning: Symboliserer fare. Man behersker taekwondo godt både fysisk og psykisk.",
   teori: [
     {koreansk: '', norsk: ''},
     {koreansk: 'Kukki', norsk: 'Flagg'},
@@ -263,11 +279,12 @@ const cup2 = {
     {koreansk: 'Twio dollyo chagi', norsk: 'Hoppende rundspark'},
   ],
   monster: [
-    {koreansk: ''},
-    {koreansk: 'Taegeuk Pal-jang'},
-    {koreansk: 'Taegeuk Chil-jang'},
-    {koreansk: 'Taegeuk Yuk-jang'},
+    {poomse: '', hyong: ''},
+    {poomse: 'Taegeuk Pal-jang', hyong: 'Hwarang'},
+    {poomse: 'Taegeuk Chil-jang', hyong: 'Toi-gye'},
+    {poomse: 'Taegeuk Yuk-jang', hyong: 'Chungun'},
   ],
+  oneoneStep: "Ilpoterian 1-9",
   oneStep: [ //Ilpoterian 1-9
     {'': '', angrep: ' ap kobi area makki (tilbake), ap kobi momtong jireugi', forsvar: ''},
   ],
@@ -283,6 +300,7 @@ const cup2 = {
   ],
 };
 const cup1 = {
+  facts: "Beltebetydning: Symboliserer fare. Man behersker taekwondo godt både fysisk og psykisk.",
   teori: [
     {koreansk: '', norsk: ''},
     {koreansk: 'Hosinsul', norsk: 'Selvforsvar'},
@@ -308,17 +326,18 @@ const cup1 = {
     {koreansk: 'Dollyo chagi + dwidola bandae dollyo chagi ', norsk: 'Sparkes med høyre, deretter venstre'},
   ],
   monster: [
-    {koreansk: ''},
-    {koreansk: 'Poomsae Koryo'},
-    {koreansk: 'Taegeuk Pal-jang'},
-    {koreansk: 'Taegeuk Chil-jang'},
-    {koreansk: 'Taegeuk Yuk-jang'},
-    {koreansk: 'Taegeuk Oh-jang'},
-    {koreansk: 'Taegeuk Sah-jang'},
-    {koreansk: 'Taegeuk Sam-jang'},
-    {koreansk: 'Taegeuk I-jang'},
-    {koreansk: 'Taegeuk Il-jang'},
+    {poomse: '', hyong: ''},
+    {poomse: 'Poomsae Koryo', hyong: 'Chung-moo'},
+    {poomse: 'Taegeuk Pal-jang', hyong: 'Hwarang'},
+    {poomse: 'Taegeuk Chil-jang', hyong: 'Toi-gye'},
+    {poomse: 'Taegeuk Yuk-jang', hyong: 'Chungun'},
+    {poomse: 'Taegeuk Oh-jang', hyong: 'Yul-gok'},
+    {poomse: 'Taegeuk Sah-jang', hyong: 'Won-hyo'},
+    {poomse: 'Taegeuk Sam-jang', hyong: 'To-san'},
+    {poomse: 'Taegeuk I-jang', hyong: 'Tan-gun'},
+    {poomse: 'Taegeuk Il-jang', hyong: 'Chon-ji'},
   ],
+  oneoneStep: "Ilpoterian 1-9 og Gibondongjak 1-6",
   oneStep: [ //Ilpoterian 1-9 - Gibondongjak 1-6
     {'': '', angrep: ' ap kobi area makki (tilbake), ap kobi momtong jireugi', forsvar: ''},
   ],
