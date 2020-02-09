@@ -184,7 +184,10 @@
 	      <table id='selvforsvar'>
 	      </table>
 	    </div>
-	    <h2>SPARRING</h2>`;
+	    <div>
+	      <h2>SPARRING</h2>
+	      <p id="sparring"></p>
+	    </div>`;
 			if (cup.brekking !== undefined) {
 					content.innerHTML += `
 						<div>
@@ -207,6 +210,7 @@
 				if (cup.brekking !== undefined) {
 						createTable(cup.brekking,document.getElementById('brekking'));
 				}
+		    if (cup.sparring !== undefined) document.getElementById('sparring').innerHTML = cup.sparring;
 	      createTable(teoriArr,document.getElementById('teori'));
 	      createTable(sparkArr,document.getElementById('spark'));
 	      createTable(monsterArr,document.getElementById('monster'));
@@ -311,14 +315,14 @@
 						<a><button name="poomsaeBtns" id="mTzt6P53yuQ">Taeguk Pal-jang</button></a>
 					</div>
 					<div class="navBox" id="hyong">
-						<a><button name="poomsaeBtns" id="w5V6Q5bl670">Chon-ji</button></a>
-						<a><button name="poomsaeBtns" id="B2zritptm2Y">Taeguk I-jang</button></a>
-						<a><button name="poomsaeBtns" id="FZaplFR-0xA">Taeguk Sam-jang</button></a>
-						<a><button name="poomsaeBtns" id="oWAQvoyfUIw">Taeguk Sa-jang</button></a>
-						<a><button name="poomsaeBtns" id="9zA9SipyMuM">Taeguk Oh-jang</button></a>
-						<a><button name="poomsaeBtns" id="nATlp_VFne4">Taeguk Yuk-jang</button></a>
-						<a><button name="poomsaeBtns" id="8FD2VjUgris">Taeguk Chil-jang</button></a>
-						<a><button name="poomsaeBtns" id="mTzt6P53yuQ">Taeguk Pal-jang</button></a>
+						<a><button name="hyongBtns" id="w5V6Q5bl670">Chon-ji</button></a>
+						<a><button name="hyongBtns" id="B2zritptm2Y">Tan-gun</button></a>
+						<a><button name="hyongBtns" id="FZaplFR-0xA">To-san</button></a>
+						<a><button name="hyongBtns" id="oWAQvoyfUIw">Won-hyo</button></a>
+						<a><button name="hyongBtns" id="9zA9SipyMuM">Yul-gok</button></a>
+						<a><button name="hyongBtns" id="nATlp_VFne4">Chungun</button></a>
+						<a><button name="hyongBtns" id="8FD2VjUgris">Toi-gye</button></a>
+						<a><button name="hyongBtns" id="mTzt6P53yuQ">Hwarang</button></a>
 					</div>
 			</div>
 
