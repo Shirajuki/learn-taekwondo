@@ -92,7 +92,7 @@ body {
 }
 div#bodyWrapper {
   display: grid;
-  grid-template-rows: 10% 80% 10%;
+  grid-template-rows: 10% minmax(80%, 1fr) 10%;
   grid-template-areas: "header"  "main"  "footer";
   height: 100vh;
 }
