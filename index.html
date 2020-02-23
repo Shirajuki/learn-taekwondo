@@ -28,7 +28,7 @@
 		let contents, menyButtons;
 		let content, buttons;
 		let videoPopup, closePopup;
-		let poomsaeBtns, youtubeFrame;
+		let poomsaeBtns, hyongBtns, youtubeFrame;
 		let poomsae, hyong, monsterBtn1, monsterBtn2;
 		// Onload DOM and Event setups. Also calls some functions to initialize the app.
 		window.onload = () => {
@@ -41,7 +41,8 @@
 			}
 			youtubeFrame = document.getElementById('youtubeFrame');
 			poomsaeBtns = document.getElementsByName('poomsaeBtns');
-			for (let p of poomsaeBtns) {
+			hyongBtns = document.getElementsByName('hyongBtns');
+			for (let p of [...poomsaeBtns, ...hyongBtns]) {
 				p.onclick = function() {
 					changeVideo(this.id,youtubeFrame);
 					// showPage(true);
@@ -76,16 +77,8 @@
 		function monster(poomsae, hyong, btn1, btn2) {
 			btn1.classList.remove('monsterOff');
 			btn2.classList.add('monsterOff');
-			poomsae.style.order = 2;
-			poomsae.style.position = "relative";
-			poomsae.style.pointerEvents = "all";
-			poomsae.style.opacity = 1;
-			poomsae.style.width = "100%";
-			hyong.style.order = 1;
-			hyong.style.position = "absolute";
-			hyong.style.pointerEvents = "none";
-			hyong.style.opacity = 0;
-			hyong.style.width = "97%";
+			poomsae.style.display = "block";
+			hyong.style.display = "none";
 		}
 		function menyChange(value,contents,menyButtons) {
 			for (let i = 0; i < contents.length; i++) {
@@ -94,7 +87,7 @@
 			}
 			setTimeout(_ => {
 				menyButtons[value].classList.add('active');
-				contents[value].style.display = 'block';
+				contents[value].style.display = 'flex';
 			},0)
 
 			if (value == 0) {
@@ -272,91 +265,92 @@
 	<div id="loader">
 		<div class="spinner" preload></div>
 	</div>
-
-	<!-- Header -->
-	<header>
-		<p>Taekwondo WT - Shirajuki</p>
-	</header>
-	<!-- Main -->
-	<main>
-		<!-- PAGE 1 -->
-		<div class='contents' id="page1">
-			<h2>Pensum</h2>
-			<div class="bigDiv" id="mainmenu">
-				<div class="navBox">
-					<a><button name="pensumBtns" id="cup10">10. cup [Hvit]</button></a>
-					<a><button name="pensumBtns" id="cup8">8. cup [Gul]</button></a>
-					<a><button name="pensumBtns" id="cup7">7. cup [Gul #]</button></a>
-					<a><button name="pensumBtns" id="cup6">6. cup [Grønn]</button></a>
-					<a><button name="pensumBtns" id="cup5">5. cup [Grønn #]</button></a>
-					<a><button name="pensumBtns" id="cup4">4. cup [Blå]</button></a>
-					<a><button name="pensumBtns" id="cup3">3. cup [Blå #]</button></a>
-					<a><button name="pensumBtns" id="cup2">2. cup [Rød]</button></a>
-					<a><button name="pensumBtns" id="cup1">1. cup [Rød #]</button></a>
+	<div id="bodyWrapper">
+		<!-- Header -->
+		<header>
+			<p>Taekwondo WT - Shirajuki</p>
+		</header>
+		<!-- Main -->
+		<main>
+			<!-- PAGE 1 -->
+			<div class='contents' id="page1">
+				<h2>Pensum</h2>
+				<div class="bigDiv" id="mainmenu">
+					<div class="navBox">
+						<a><button name="pensumBtns" id="cup10">10. cup [Hvit]</button></a>
+						<a><button name="pensumBtns" id="cup8">8. cup [Gul]</button></a>
+						<a><button name="pensumBtns" id="cup7">7. cup [Gul #]</button></a>
+						<a><button name="pensumBtns" id="cup6">6. cup [Grønn]</button></a>
+						<a><button name="pensumBtns" id="cup5">5. cup [Grønn #]</button></a>
+						<a><button name="pensumBtns" id="cup4">4. cup [Blå]</button></a>
+						<a><button name="pensumBtns" id="cup3">3. cup [Blå #]</button></a>
+						<a><button name="pensumBtns" id="cup2">2. cup [Rød]</button></a>
+						<a><button name="pensumBtns" id="cup1">1. cup [Rød #]</button></a>
+					</div>
 				</div>
 			</div>
-		</div>
-		<!-- PAGE 2 -->
-		<div class='contents' id="page2">
-			<h2>Mønster<h2>
-			<div class="monsterType">
-				<a><button id="monsterBtn1" class="monsterOff">WTF</button></a>
-				<a><button id="monsterBtn2">ITF</button></a>
-			</div>
-			<div class="bigDiv">
-					<div class="navBox" id="poomsae">
-						<a><button name="poomsaeBtns" id="w5V6Q5bl670">Taeguk Il-jang</button></a>
-						<a><button name="poomsaeBtns" id="B2zritptm2Y">Taeguk I-jang</button></a>
-						<a><button name="poomsaeBtns" id="FZaplFR-0xA">Taeguk Sam-jang</button></a>
-						<a><button name="poomsaeBtns" id="oWAQvoyfUIw">Taeguk Sa-jang</button></a>
-						<a><button name="poomsaeBtns" id="9zA9SipyMuM">Taeguk Oh-jang</button></a>
-						<a><button name="poomsaeBtns" id="nATlp_VFne4">Taeguk Yuk-jang</button></a>
-						<a><button name="poomsaeBtns" id="8FD2VjUgris">Taeguk Chil-jang</button></a>
-						<a><button name="poomsaeBtns" id="mTzt6P53yuQ">Taeguk Pal-jang</button></a>
-					</div>
-					<div class="navBox" id="hyong">
-						<a><button name="hyongBtns" id="w5V6Q5bl670">Chon-ji</button></a>
-						<a><button name="hyongBtns" id="B2zritptm2Y">Tan-gun</button></a>
-						<a><button name="hyongBtns" id="FZaplFR-0xA">To-san</button></a>
-						<a><button name="hyongBtns" id="oWAQvoyfUIw">Won-hyo</button></a>
-						<a><button name="hyongBtns" id="9zA9SipyMuM">Yul-gok</button></a>
-						<a><button name="hyongBtns" id="nATlp_VFne4">Chungun</button></a>
-						<a><button name="hyongBtns" id="8FD2VjUgris">Toi-gye</button></a>
-						<a><button name="hyongBtns" id="mTzt6P53yuQ">Hwarang</button></a>
-					</div>
-			</div>
+			<!-- PAGE 2 -->
+			<div class='contents' id="page2">
+				<h2>Mønster</h2>
+				<div class="monsterType">
+					<a><button id="monsterBtn1" class="monsterOff">WTF</button></a>
+					<a><button id="monsterBtn2">ITF</button></a>
+				</div>
+				<div class="bigDiv">
+						<div class="navBox" id="poomsae">
+							<a><button name="poomsaeBtns" id="w5V6Q5bl670">Taeguk Il-jang</button></a>
+							<a><button name="poomsaeBtns" id="B2zritptm2Y">Taeguk I-jang</button></a>
+							<a><button name="poomsaeBtns" id="FZaplFR-0xA">Taeguk Sam-jang</button></a>
+							<a><button name="poomsaeBtns" id="oWAQvoyfUIw">Taeguk Sa-jang</button></a>
+							<a><button name="poomsaeBtns" id="9zA9SipyMuM">Taeguk Oh-jang</button></a>
+							<a><button name="poomsaeBtns" id="nATlp_VFne4">Taeguk Yuk-jang</button></a>
+							<a><button name="poomsaeBtns" id="8FD2VjUgris">Taeguk Chil-jang</button></a>
+							<a><button name="poomsaeBtns" id="mTzt6P53yuQ">Taeguk Pal-jang</button></a>
+						</div>
+						<div class="navBox" id="hyong">
+							<a><button name="hyongBtns" id="w5V6Q5bl670">Chon-ji</button></a>
+							<a><button name="hyongBtns" id="B2zritptm2Y">Tan-gun</button></a>
+							<a><button name="hyongBtns" id="FZaplFR-0xA">To-san</button></a>
+							<a><button name="hyongBtns" id="oWAQvoyfUIw">Won-hyo</button></a>
+							<a><button name="hyongBtns" id="9zA9SipyMuM">Yul-gok</button></a>
+							<a><button name="hyongBtns" id="nATlp_VFne4">Chungun</button></a>
+							<a><button name="hyongBtns" id="8FD2VjUgris">Toi-gye</button></a>
+							<a><button name="hyongBtns" id="mTzt6P53yuQ">Hwarang</button></a>
+						</div>
+				</div>
 
-		</div>
-		<!-- PAGE 3 -->
-		<div class='contents'>
-			<h2>Spark teknikker [TBA]</h2>
-			<div class="bigDiv">
-				<div class="navBox">
-					<a><button name="kickBtns" id="w5V6Q5bl670">Ap chagi</button></a>
-					<a><button name="kickBtns" id="B2zritptm2Y">Dollyo chagi</button></a>
-					<a><button name="kickBtns" id="FZaplFR-0xA">Yop chagi</button></a>
-					<a><button name="kickBtns" id="oWAQvoyfUIw">Apchok ap chagi</button></a>
-					<a><button name="kickBtns" id="9zA9SipyMuM">An chagi</button></a>
-					<a><button name="kickBtns" id="nATlp_VFne4">Bakkat Chagi</button></a>
+			</div>
+			<!-- PAGE 3 -->
+			<div class='contents'>
+				<h2>Spark teknikker [TBA]</h2>
+				<div class="bigDiv">
+					<div class="navBox">
+						<a><button name="kickBtns" id="w5V6Q5bl670">Ap chagi</button></a>
+						<a><button name="kickBtns" id="B2zritptm2Y">Dollyo chagi</button></a>
+						<a><button name="kickBtns" id="FZaplFR-0xA">Yop chagi</button></a>
+						<a><button name="kickBtns" id="oWAQvoyfUIw">Apchok ap chagi</button></a>
+						<a><button name="kickBtns" id="9zA9SipyMuM">An chagi</button></a>
+						<a><button name="kickBtns" id="nATlp_VFne4">Bakkat Chagi</button></a>
+					</div>
 				</div>
 			</div>
+		</main>
+		<!-- Pop-ups -->
+		<div class="popup" id="videoPopup">
+			<a class="closePopup"><i>❌</i></a>
+			<div class="video-container">
+				<iframe id="youtubeFrame" width="560" height="315"
+				src="https://www.youtube.com/embed/w5V6Q5bl670" frameborder="0"
+				allowfullscreen>
+			</iframe>
+			</div>
 		</div>
-	</main>
-	<!-- Pop-ups -->
-	<div class="popup" id="videoPopup">
-		<a class="closePopup"><i>❌</i></a>
-		<div class="video-container">
-			<iframe id="youtubeFrame" width="560" height="315"
-			src="https://www.youtube.com/embed/w5V6Q5bl670" frameborder="0"
-			allowfullscreen>
-		</iframe>
-		</div>
+		<!-- Footer -->
+		<footer>
+			<button name="0" class='menyButtons' class='active'><i>🏠</i></button>
+			<button name="1" class='menyButtons'><i>🥋</i></button>
+			<button name="2" class='menyButtons'><i>👟</i></button>
+		</footer>
 	</div>
-	<!-- Footer -->
-	<footer>
-		<button name="0" class='menyButtons' class='active'><i>🏠</i></button>
-		<button name="1" class='menyButtons'><i>🥋</i></button>
-		<button name="2" class='menyButtons'><i>👟</i></button>
-	</footer>
 </body>
 </html>
