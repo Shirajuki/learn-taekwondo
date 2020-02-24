@@ -92,6 +92,7 @@
 
 			if (value == 0) {
 	      content.innerHTML = `
+		  <h2>Pensum</h2>
 	      <div class="navBox">
 					<a><button name="pensumBtns" id="cup10">10. cup [Hvit]</button></a>
 					<a><button name="pensumBtns" id="cup8">8. cup [Gul]</button></a>
@@ -129,6 +130,7 @@
 		function loadPensum(id) {
 			const cup = eval(id);
 	    content.innerHTML = `
+		<h2>Pensum: ${id}</h2>
 	    <div>
 	      <h2>TEORI</h2>
 	      <table id='teori'>
@@ -274,8 +276,8 @@
 		<main>
 			<!-- PAGE 1 -->
 			<div class='contents' id="page1">
-				<h2>Pensum</h2>
 				<div class="bigDiv" id="mainmenu">
+					<h2>Pensum</h2>
 					<div class="navBox">
 						<a><button name="pensumBtns" id="cup10">10. cup [Hvit]</button></a>
 						<a><button name="pensumBtns" id="cup8">8. cup [Gul]</button></a>
@@ -293,8 +295,8 @@
 			<div class='contents' id="page2">
 				<h2>Mønster</h2>
 				<div class="monsterType">
-					<a><button id="monsterBtn1" class="monsterOff">WTF</button></a>
-					<a><button id="monsterBtn2">ITF</button></a>
+					<a><button id="monsterBtn1" class="monsterOff">Poomsae</button></a>
+					<a><button id="monsterBtn2">Hyong</button></a>
 				</div>
 				<div class="bigDiv">
 						<div class="navBox" id="poomsae">
