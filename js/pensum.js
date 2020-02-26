@@ -318,7 +318,7 @@ const cup2 = {
     {'': '3', angrep: ['ap kobi area makki','ap kobi momtong jireugi'], forsvar: ['Juchum seogi momtong an makki','Juchum seogi palkup yop chigi','Juchum seogi olgul bakkat chigi']},
     {'': '4', angrep: ['ap kobi area makki','ap kobi momtong jireugi'], forsvar: ['Dwit kobi momtong geodeuro makki','Ap chagi (venstre fot)','Dollyo chagi (høyre fot)']},
     {'': '5', angrep: ['ap kobi area makki','ap kobi momtong jireugi'], forsvar: ['Dwit kobi oesantul makki (mot venstre)','2x Yop chagi (mage, hode)']},
-    {'': '6', angrep: ['ap kobi area makki','ap kobi momtong jireugi'], forsvar: ['Dwit kobi oesantul makki (mot høyre)','Yop cghagi (venstre fot, mage)']},
+    {'': '6', angrep: ['ap kobi area makki','ap kobi momtong jireugi'], forsvar: ['Dwit kobi oesantul makki (mot høyre)','Yop chagi (venstre fot, mage)']},
     {'': '7', angrep: ['ap kobi area makki','ap kobi momtong jireugi'], forsvar: ['Twio ap chagi']},
     {'': '8', angrep: ['ap kobi area makki','ap kobi momtong jireugi'], forsvar: ['Twio dollyo chagi']},
     {'': '9', angrep: ['ap kobi area makki','ap kobi momtong jireugi'], forsvar: ['Twio yop chagi']},
