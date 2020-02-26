@@ -1,14 +1,46 @@
 <!doctype html>
 <html>
-<head>
-	<title>Jonny</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-	<link href="css/index.css" rel="stylesheet" type="text/css">
-	<link href="css/preloader.css" rel="stylesheet" type="text/css">
-	<link href="css/table.css" rel="stylesheet" type="text/css">
-	<script preload src="js/pensum.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<head>
+		<title>Taekwondo WT</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+		<link href="css/index.css" rel="stylesheet" type="text/css">
+		<link href="css/preloader.css" rel="stylesheet" type="text/css">
+		<link href="css/table.css" rel="stylesheet" type="text/css">
+		<script preload src="js/pensum.js"></script>
+		<link rel="manifest" href="manifest.json">
+		<script type="text/javascript">
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', function() {
+					navigator.serviceWorker.register('service-worker.js').then(function(reg) {
+						reg.onupdatefound = function() {
+							var installingWorker = reg.installing;
+							installingWorker.onstatechange = function() {
+								switch (installingWorker.state) {
+									case 'installed':
+										if (navigator.serviceWorker.controller) {
+											// At this point, the old content will have been purged and the fresh content will
+											// have been added to the cache.
+											// It's the perfect time to display a "New content is available; please refresh."
+											// message in the page's interface.
+											reg.update();
+											console.log('New or updated content is available.');
+										} else {
+											console.log('Content is now available offline!');
+										}
+										break;
+									case 'redundant':
+										console.error('The installing service worker became redundant.');
+										break;
+								}
+							};
+						};
+					}).catch(function(e) {
+						console.error('Error during service worker registration:', e);
+					});
+				});
+			}
+		</script>
 	<script type="text/javascript">
 	// https://emojipedia.org/symbols/
 		setTimeout(_ => showPage(false), 1400);
@@ -30,6 +62,7 @@
 		let videoPopup, closePopup;
 		let poomsaeBtns, hyongBtns, youtubeFrame;
 		let poomsae, hyong, monsterBtn1, monsterBtn2;
+		let kickBtns;
 		// Onload DOM and Event setups. Also calls some functions to initialize the app.
 		window.onload = () => {
 		// DOM - footer
@@ -39,10 +72,11 @@
 			for (let c of menyButtons) {
 				c.onclick = function() {menyChange(this.name,contents,menyButtons)};
 			}
+			kickBtns = document.getElementsByName('kickBtns');
 			youtubeFrame = document.getElementById('youtubeFrame');
 			poomsaeBtns = document.getElementsByName('poomsaeBtns');
 			hyongBtns = document.getElementsByName('hyongBtns');
-			for (let p of [...poomsaeBtns, ...hyongBtns]) {
+			for (let p of [...poomsaeBtns, ...hyongBtns, ...kickBtns]) {
 				p.onclick = function() {
 					changeVideo(this.id,youtubeFrame);
 					// showPage(true);
@@ -309,6 +343,7 @@
 							<a><button name="poomsaeBtns" id="8FD2VjUgris">Taeguk Chil-jang</button></a>
 							<a><button name="poomsaeBtns" id="mTzt6P53yuQ">Taeguk Pal-jang</button></a>
 						</div>
+						<! -- https://drive.google.com/file/d/1TInYq0VADGuAsUteC6CuI_aR6eJu1umV/preview -->
 						<div class="navBox" id="hyong">
 							<a><button name="hyongBtns" id="HDMcn53etPk">Chon-ji</button></a>
 							<a><button name="hyongBtns" id="_M6gm7KOTrI">Tan-gun</button></a>
@@ -336,6 +371,14 @@
 					</div>
 				</div>
 			</div>
+			<! -- PAGE 4 -->
+			<div class='contents'>
+				<h2>Teori [TBA]</h2>
+				<div class="bigDiv">
+					<div class="navBox">
+					</div>
+				</div>
+			</div>
 		</main>
 		<!-- Pop-ups -->
 		<div class="popup" id="videoPopup">
@@ -352,6 +395,7 @@
 			<button name="0" class='menyButtons' class='active'><i>🏠</i></button>
 			<button name="1" class='menyButtons'><i>🥋</i></button>
 			<button name="2" class='menyButtons'><i>👟</i></button>
+			<button name="3" class='menyButtons'><i>📚</i></button>
 		</footer>
 	</div>
 </body>
